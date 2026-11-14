@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 26</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Шифр тот же: пара «цвет + форма» однозначно задаёт букву. Слева восемь слов</text>
+  <text x="40" y="104" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">одного ряда в естественном порядке, одна буква открыта. Подсказка выглядывает</text>
+  <text x="40" y="128" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">из-за левого края. Расшифруйте слово справа.</text>
+  <circle cx="0" cy="349" r="40" fill="#F1C40F"/>
+  <line x1="15.73" y1="305.77" x2="21.89" y2="288.86" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="34.18" y1="318.22" x2="47.56" y2="306.18" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="44.63" y1="337.87" x2="62.1" y2="333.52" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="44.63" y1="360.13" x2="62.1" y2="364.48" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="34.18" y1="379.78" x2="47.56" y2="391.82" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="15.73" y1="392.23" x2="21.89" y2="409.14" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <rect x="60" y="152" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <circle cx="132" cy="174" r="22" fill="#3498DB"/>
+  <rect x="160" y="152" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <rect x="210" y="152" width="44" height="44" rx="0" fill="#F39C12"/>
+  <circle cx="282" cy="174" r="22" fill="#9B59B6"/>
+  <rect x="310" y="152" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <rect x="360" y="152" width="44" height="44" rx="13.2" fill="#1ABC9C"/>
+  <rect x="410" y="152" width="44" height="44" rx="0" fill="#FF6FA8"/>
+  <circle cx="182" cy="224" r="22" fill="#F1C40F"/>
+  <circle cx="232" cy="224" r="22" fill="#3498DB"/>
+  <rect x="260" y="202" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <circle cx="332" cy="224" r="22" fill="#3498DB"/>
+  <rect x="360" y="202" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <rect x="410" y="202" width="44" height="44" rx="0" fill="#3498DB"/>
+  <circle cx="232" cy="274" r="22" fill="#27AE60"/>
+  <text x="232" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">З</text>
+  <circle cx="282" cy="274" r="22" fill="#3498DB"/>
+  <rect x="310" y="252" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <rect x="360" y="252" width="44" height="44" rx="13.2" fill="#F39C12"/>
+  <rect x="410" y="252" width="44" height="44" rx="0" fill="#9B59B6"/>
+  <rect x="260" y="302" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <rect x="310" y="302" width="44" height="44" rx="0" fill="#3498DB"/>
+  <rect x="360" y="302" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <circle cx="432" cy="324" r="22" fill="#1ABC9C"/>
+  <rect x="160" y="352" width="44" height="44" rx="13.2" fill="#FF6FA8"/>
+  <rect x="210" y="352" width="44" height="44" rx="0" fill="#F1C40F"/>
+  <rect x="260" y="352" width="44" height="44" rx="13.2" fill="#1ABC9C"/>
+  <circle cx="332" cy="374" r="22" fill="#E74C3C"/>
+  <circle cx="382" cy="374" r="22" fill="#3498DB"/>
+  <rect x="410" y="352" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <circle cx="182" cy="424" r="22" fill="#1ABC9C"/>
+  <rect x="210" y="402" width="44" height="44" rx="0" fill="#3498DB"/>
+  <circle cx="282" cy="424" r="22" fill="#E74C3C"/>
+  <circle cx="332" cy="424" r="22" fill="#9B59B6"/>
+  <rect x="360" y="402" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <rect x="410" y="402" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <circle cx="282" cy="474" r="22" fill="#9B59B6"/>
+  <rect x="310" y="452" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <rect x="360" y="452" width="44" height="44" rx="0" fill="#3498DB"/>
+  <rect x="410" y="452" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <rect x="160" y="502" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <circle cx="232" cy="524" r="22" fill="#3498DB"/>
+  <rect x="260" y="502" width="44" height="44" rx="0" fill="#F1C40F"/>
+  <circle cx="332" cy="524" r="22" fill="#E74C3C"/>
+  <circle cx="382" cy="524" r="22" fill="#9B59B6"/>
+  <rect x="410" y="502" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="490" y="252" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Расшифруйте:</text>
+  <circle cx="512" cy="294" r="22" fill="#1ABC9C"/>
+  <circle cx="562" cy="294" r="22" fill="#3498DB"/>
+  <rect x="590" y="272" width="44" height="44" rx="0" fill="#F39C12"/>
+  <rect x="640" y="272" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <circle cx="712" cy="294" r="22" fill="#3498DB"/>
+  <circle cx="762" cy="294" r="22" fill="#E74C3C"/>
+</svg>

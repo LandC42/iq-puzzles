@@ -136,7 +136,7 @@ CARDS = {}
 DEFS = ("<defs>" + "".join(
     f'<marker id="arr-{name}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" '
     f'orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="{c}"/></marker>'
-    for name, c in (("k", LINE), ("g", GREEN), ("h", "#9AA0A6"), ("r", RED), ("n", "#39FF6A"))) + "</defs>")
+    for name, c in (("k", LINE), ("g", GREEN), ("h", "#9AA0A6"), ("r", RED), ("n", "#39FF6A"), ("b", BLUE))) + "</defs>")
 
 
 def save(n, task_svg, sol_svg):
@@ -1469,6 +1469,1035 @@ def task24():
 
 
 # =============================================================================
+# Набор 2: задачи 25–44
+# =============================================================================
+def cipher_grid(cipher, rows, cell, step, x0, y0, opened=(), q=None, letter_size=None):
+    """rows: [(слово, номер_строки, первый_столбец)]. Возвращает (task, solution, позиция «?»)."""
+    ls = letter_size or round(cell * 0.5)
+    t_els, s_els = [], []
+    for word, r, c0 in rows:
+        for i, ch in enumerate(word):
+            cx = x0 + (c0 + i) * step + cell / 2
+            cy = y0 + r * step + cell / 2
+            color, kind = cipher[ch]
+            full = [shape(kind, cx, cy, cell, color), center_label(cx, cy, ch, ls)]
+            if (r, c0 + i) == q:
+                t_els += qmark(kind, cx, cy, cell)
+                s_els += full + [green_frame(cx - cell / 2, cy - cell / 2, cell, cell, 4)]
+                continue
+            t_els += full if (r, c0 + i) in opened else full[:1]
+            s_els += full
+    return t_els, s_els
+
+
+CIPHER25 = {
+    "Д": (RED, "square"),    "О": (BLUE, "circle"),    "Р": (GREEN, "square"),  "Е": (ORANGE, "circle"),
+    "М": (PURPLE, "rsquare"), "И": (TEAL, "circle"),   "Ф": (YELLOW, "rsquare"), "А": (PINK, "square"),
+    "С": (BLUE, "square"),   "Л": (RED, "rsquare"),    "Ь": (GREEN, "circle"),  "Я": (PURPLE, "square"),
+}
+
+
+def task25():
+    words = ["СИ", "ФА", "ДО", "СОЛЬ", "МИ", "ЛЯ", "РЕ"]
+    check_cipher(CIPHER25, words)
+    assert CIPHER25[words[5][0]] == CIPHER25[words[3][2]]  # «?» совпадает с 3-й ячейкой СОЛЬ
+    card = Card(25, "Каждая буква всегда изображается одной и той же парой «цвет + форма». Семь слов из "
+                    "одного известного ряда записаны в перемешанном порядке. Какая буква под знаком «?»?")
+    t_els, s_els = cipher_grid(CIPHER25, [(w, r, 0) for r, w in enumerate(words)], 52, 58, 300,
+                               card.body_top + 4, opened={(1, 0), (3, 3)}, q=(5, 0))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: Л. Это ноты ДО…СИ; красный скруглённый квадрат = Л, как в СОЛЬ.")
+    save(25, task, sol)
+    return "Л"
+
+
+CIPHER26 = {
+    "М": (RED, "square"),     "Е": (BLUE, "circle"),    "Р": (GREEN, "rsquare"), "К": (ORANGE, "square"),
+    "У": (PURPLE, "circle"),  "И": (TEAL, "rsquare"),   "Й": (PINK, "square"),   "В": (YELLOW, "circle"),
+    "Н": (RED, "rsquare"),    "А": (BLUE, "square"),    "З": (GREEN, "circle"),  "Л": (ORANGE, "rsquare"),
+    "Я": (PURPLE, "square"),  "С": (TEAL, "circle"),    "Ю": (PINK, "rsquare"),  "П": (YELLOW, "square"),
+    "Т": (RED, "circle"),
+}
+
+
+def task26():
+    planets = ["МЕРКУРИЙ", "ВЕНЕРА", "ЗЕМЛЯ", "МАРС", "ЮПИТЕР", "САТУРН", "УРАН", "НЕПТУН"]
+    check_cipher(CIPHER26, planets)
+    secret_codes = [(TEAL, "circle"), (BLUE, "circle"), (ORANGE, "square"),
+                    (GREEN, "rsquare"), (BLUE, "circle"), (RED, "circle")]
+    inverse = {v: k for k, v in CIPHER26.items()}
+    secret = "".join(inverse[c] for c in secret_codes)
+    assert secret == "СЕКРЕТ"
+    assert [w for w in planets if "К" in w] == ["МЕРКУРИЙ"]
+
+    card = Card(26, "Шифр тот же: пара «цвет + форма» однозначно задаёт букву. Слева восемь слов одного ряда "
+                    "в естественном порядке, одна буква открыта. Подсказка выглядывает из-за левого края. "
+                    "Расшифруйте слово справа.")
+    cell, step = 44, 50
+    y0 = card.body_top + 6
+    rows = [(w, r, 8 - len(w)) for r, w in enumerate(planets)]
+    t_els, s_els = cipher_grid(CIPHER26, rows, cell, step, 60, y0, opened={(2, 3)}, letter_size=22)
+    sy = y0 + 4 * step - 3
+    sun = [f'<circle cx="0" cy="{f(sy)}" r="40" fill="{YELLOW}"/>']
+    for a in (-70, -42, -14, 14, 42, 70):
+        ra = math.radians(a)
+        sun.append(line(46 * math.cos(ra), sy + 46 * math.sin(ra), 64 * math.cos(ra), sy + 64 * math.sin(ra), YELLOW, 4))
+    right = [text(490, y0 + 100, "Расшифруйте:", 18, TEXT)]
+    r_sol = list(right)
+    for i, (color, kind) in enumerate(secret_codes):
+        cx, cy = 490 + i * 50 + cell / 2, y0 + 120 + cell / 2
+        right.append(shape(kind, cx, cy, cell, color))
+        r_sol += [shape(kind, cx, cy, cell, color), center_label(cx, cy, secret[i], 22),
+                  text(cx, cy + cell / 2 + 30, secret[i], 22, GREEN, "bold", "middle")]
+    card.body = sun + t_els + right
+    task = card.render()
+    card.body = sun + s_els + r_sol
+    sol = card.render("Ответ: СЕКРЕТ. Восемь планет по порядку от Солнца; справа С-Е-К-Р-Е-Т.")
+    save(26, task, sol)
+    return secret
+
+
+# --- 27. Морзе --------------------------------------------------------------------
+MORSE = {"Е": ".", "Т": "-", "И": "..", "А": ".-", "Н": "-.", "М": "--", "С": "...", "О": "---",
+         "Ш": "----", "Р": ".-.", "Х": "....", "У": "..-"}
+
+
+def morse_marks(code, cx, cy, unit=7, color=LINE):
+    widths = [unit * (1 if ch == "." else 3) for ch in code]
+    total = sum(widths) + unit * 1.2 * (len(code) - 1)
+    x, els = cx - total / 2, []
+    for ch, w in zip(code, widths):
+        if ch == ".":
+            els.append(f'<circle cx="{f(x + w / 2)}" cy="{f(cy)}" r="{f(unit / 2)}" fill="{color}"/>')
+        else:
+            els.append(rect(x, cy - unit / 2, w, unit, color, unit / 2))
+        x += w + unit * 1.2
+    return els
+
+
+def task27():
+    seq = ["Е", "Т", "И", "А", "Н", "М"]
+    # порядок: по длине, внутри длины — как двоичные числа (· = 0, – = 1)
+    order = [''.join(".-"[int(b)] for b in format(k, f"0{n}b")) for n in (1, 2, 3) for k in range(2 ** n)]
+    assert [MORSE[ch] for ch in seq] == order[:6]
+    nxt = order[6]
+    opts = ["С", "О", "Ш", "Р", "Х", "У"]
+    ans = "ABCDEF"[[MORSE[o] for o in opts].index(nxt)]
+    assert ans == "A" and [MORSE[o] for o in opts].count(nxt) == 1
+
+    card = Card(27, "Карточки идут в строгом порядке. Какая карточка следующая?")
+    t_els, s_els = [], []
+    for i in range(7):
+        x, y = 40 + i * 105, card.body_top + 40
+        if i == 6:
+            t_els += [rect(x, y, 90, 120, HIDDEN, 10), center_label(x + 45, y + 60, "?", 54)]
+            s_els += [rect(x, y, 90, 120, WHITE, 10, LINE, 2), center_label(x + 45, y + 40, "С", 40, LINE),
+                      *morse_marks(nxt, x + 45, y + 90), green_frame(x, y, 90, 120, 4)]
+            continue
+        els = [rect(x, y, 90, 120, WHITE, 10, LINE, 2), center_label(x + 45, y + 40, seq[i], 40, LINE),
+               *morse_marks(MORSE[seq[i]], x + 45, y + 90)]
+        t_els += els
+        s_els += els
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y - 16, o, 32, LINE), *morse_marks(MORSE[o], x, y + 26, 6)]
+                      for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — С (···). Коды идут по длине, а внутри длины — как двоичные числа "
+                      "(· = 0, – = 1): 0, 1, 00, 01, 10, 11, 000.", ans)
+    save(27, task, sol)
+    return "A (С ···)"
+
+
+# --- 28. T9 -------------------------------------------------------------------------
+T9 = {c: str(d) for d, letters in {2: "ABC", 3: "DEF", 4: "GHI", 5: "JKL", 6: "MNO",
+                                    7: "PQRS", 8: "TUV", 9: "WXYZ"}.items() for c in letters}
+t9 = lambda w: "".join(T9[c] for c in w)
+MONO = "Menlo, Consolas, 'Courier New', monospace"
+
+
+def task28():
+    pairs = [("KISS", "LIPS"), ("BOOK", "COOL"), ("HOME", "GOOD")]
+    for a, b in pairs:
+        assert t9(a) == t9(b), (a, b)
+    opts = ["CAR", "ART", "BAT", "ACE", "TAB", "BUT"]
+    matches = [o for o in opts if t9(o) == t9("ACT")]
+    assert matches == ["BAT"]
+    ans = "ABCDEF"[opts.index("BAT")]
+
+    card = Card(28, "Все равенства верны. Какое слово подходит вместо «?»?")
+    cw = 18.06  # ширина символа моноширинного шрифта 30px
+    t_els, s_els = [], []
+    rows = pairs + [("ACT", None)]
+    for k, (a, b) in enumerate(rows):
+        y = card.body_top + 62 + k * 62
+        left = f"{a} = " + (b or "")
+        mono = lambda s, x, size=30, fill=LINE, weight="normal": (
+            f'<text x="{f(x)}" y="{f(y)}" font-family="{MONO}" font-size="{size}" font-weight="{weight}" '
+            f'fill="{fill}" xml:space="preserve">{escape(s)}</text>')
+        el = mono(left, 200)
+        t_els.append(el)
+        s_els.append(el)
+        codes = [(a, 200)] + ([(b, 200 + cw * (len(a) + 3))] if b else [])
+        for word, x in codes:
+            s_els.append(text(x + cw * len(word) / 2, y + 20, t9(word), 14, GREEN, "bold", "middle"))
+        if b is None:
+            qx = 200 + cw * (len(a) + 3)
+            t_els += [rect(qx, y - 30, 40, 40, HIDDEN, 6), center_label(qx + 20, y - 10, "?", 26)]
+            s_els += [mono("BAT", qx, 30, GREEN, "bold"),
+                      text(qx + cw * 1.5, y + 20, t9("BAT"), 14, GREEN, "bold", "middle")]
+    phone = [rect(690, card.body_top + 6, 60, 110, WHITE, 10, LINE, 2)]
+    for r in range(4):
+        for c in range(3):
+            phone.append(f'<circle cx="{705 + c * 15}" cy="{f(card.body_top + 34 + r * 20)}" r="5" fill="{LINE}"/>')
+    t_els += phone
+    s_els += phone
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, o, 22, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: C — BAT. На кнопочном телефоне обе части набираются одними и теми же клавишами: "
+                      "ACT = BAT = 228.", ans)
+    save(28, task, sol)
+    return "C (BAT)"
+
+
+# --- 29. Буквы госномеров ------------------------------------------------------------
+def task29():
+    plate = "АВЕКМНОРСТУХ"  # кириллица, совпадающая по начертанию с латиницей
+    assert list(plate) == sorted(plate, key=ALPHABET.index)
+    shown = plate[:10] + "?" + plate[11]
+    opts = ["У", "Ф", "Ц", "Ш", "Я", "Ю"]
+    ans = "ABCDEF"[opts.index(plate[10])]
+    assert ans == "A"
+
+    card = Card(29, "Какая буква пропущена?")
+    px, py = 40, card.body_top + 70
+    base = [rect(px, py, 720, 90, WHITE, 12, LINE, 4)]
+    fx, fy = px + 680, py + 30
+    base += [rect(fx, fy, 30, 6, WHITE, 0, LINE, 1), rect(fx, fy + 6, 30, 6, BLUE), rect(fx, fy + 12, 30, 6, RED)]
+    t_els, s_els = list(base), list(base)
+    for i, ch in enumerate(shown):
+        cx = 52 + i * 54 + 27
+        if ch == "?":
+            t_els += [rect(cx - 24, py + 14, 48, 62, HIDDEN, 6), center_label(cx, py + 45, "?", 40)]
+            s_els += [center_label(cx, py + 45, plate[10], 44, GREEN), green_frame(cx - 24, py + 14, 48, 62, 0)]
+            continue
+        el = center_label(cx, py + 45, ch, 44, LINE)
+        t_els.append(el)
+        s_els.append(el)
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, o, 44, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — У. Только эти 12 кириллических букв совпадают по начертанию с латинскими "
+                      "и разрешены на российских номерах.", ans)
+    save(29, task, sol)
+    return "A (У)"
+
+
+# --- 30. Стихи про π ---------------------------------------------------------------
+ITALIC = "/System/Library/Fonts/Supplemental/Arial Italic.ttf"
+
+
+def italic_width(s, size):
+    return ImageFont.truetype(ITALIC, size).getlength(s)
+
+
+def task30():
+    l1 = "Это я знаю и помню прекрасно,"
+    l2 = "Пи многие знаки мне лишни,"
+    opts = ["ненужны", "напрасны", "смешны", "бесполезны", "вредны", "излишни"]
+    letters = lambda w: sum(ch.isalpha() for ch in w)
+    digits = [letters(w) for w in (l1 + " " + l2).split()]
+    pi = "314159265358"
+    assert digits == [int(d) for d in pi[:11]]
+    fit = [o for o in opts if len(o) == int(pi[11])]
+    assert fit == ["напрасны"]
+    ans = "ABCDEF"[opts.index(fit[0])]
+
+    card = Card(30, "Закончите двустишие. Подходит только одно слово.")
+    y1, y2 = card.body_top + 82, card.body_top + 142
+    it = lambda s, x, y, fill=LINE, weight="normal": (
+        f'<text x="{f(x)}" y="{f(y)}" font-family="{FONT}" font-size="30" font-style="italic" '
+        f'font-weight="{weight}" fill="{fill}" xml:space="preserve">{escape(s)}</text>')
+    base = [it(l1, 60, y1), it(l2, 60, y2),
+            f'<circle cx="730" cy="{f(card.body_top + 30)}" r="22" fill="{BLUE}"/>',
+            center_label(730, card.body_top + 30, "π", 26)]
+    bx = 60 + italic_width(l2 + " ", 30)
+    t_els = base + [rect(bx, y2 - 27, 160, 36, HIDDEN, 6), center_label(bx + 80, y2 - 9, "?", 24)]
+    s_els = base + [it(fit[0], bx, y2, GREEN, "bold"), green_frame(bx - 4, y2 - 29, 168, 40, 0)]
+    for y, ln in ((y1, l1), (y2, l2 + " " + fit[0])):
+        x = 60
+        for w in ln.split(" "):
+            ww = italic_width(w, 30)
+            s_els.append(text(x + ww / 2, y + 24, str(letters(w)), 16, GREEN, "bold", "middle"))
+            x += ww + italic_width(" ", 30)
+
+    def opt(o):
+        size = min(20, 96 / text_width(o, 20) * 20)
+        return lambda x, y, s: [center_label(x, y, o, round(size, 1), LINE, "normal")]
+
+    card.add_options([opt(o) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — «напрасны». Длины слов — цифры числа π = 3,14159265358…", ans)
+    save(30, task, sol)
+    return "B (напрасны)"
+
+
+# --- 31. Цифры по алфавиту ----------------------------------------------------------
+DIGIT_NAMES = {0: "ноль", 1: "один", 2: "два", 3: "три", 4: "четыре", 5: "пять",
+               6: "шесть", 7: "семь", 8: "восемь", 9: "девять", 10: "десять"}
+
+
+def task31():
+    row = [8, 2, 9, 0, 1, 5, 7, 3, 4, 6]
+    assert row == sorted(range(10), key=lambda d: DIGIT_NAMES[d])
+    pos = sorted(range(11), key=lambda d: DIGIT_NAMES[d]).index(10)  # куда встаёт «десять»
+    gaps = {"A": 0, "B": 2, "C": 3, "D": 4, "E": 5, "F": 10}  # индекс вставки
+    ans = next(k for k, v in gaps.items() if v == pos)
+    assert ans == "C"
+
+    card = Card(31, "Цифры выстроены по одному правилу. Где в этом ряду должно встать число 10?")
+    cy = card.body_top + 160
+    base = []
+    for i, d in enumerate(row):
+        cx = 85 + i * 70
+        base += [f'<circle cx="{cx}" cy="{f(cy)}" r="28" fill="{WHITE}" stroke="{LINE}" stroke-width="3"/>',
+                 center_label(cx, cy, str(d), 30, LINE)]
+    t_els, s_els = list(base), list(base)
+    for k, gi in gaps.items():
+        mx = 85 + gi * 70 - 35
+        if k == ans:
+            t_els += [polygon([(mx, cy + 44), (mx - 9, cy + 58), (mx + 9, cy + 58)], BLUE),
+                      text(mx, cy + 80, k, 18, BLUE, "bold", "middle")]
+            s_els += [polygon([(mx, cy + 40), (mx - 14, cy + 62), (mx + 14, cy + 62)], GREEN),
+                      text(mx, cy + 88, k, 24, GREEN, "bold", "middle")]
+        else:
+            els = [polygon([(mx, cy + 44), (mx - 9, cy + 58), (mx + 9, cy + 58)], BLUE),
+                   text(mx, cy + 80, k, 18, BLUE, "bold", "middle")]
+            t_els += els
+            s_els += els
+    gx = 85 + gaps[ans] * 70 - 35
+    s_els += [f'<circle cx="{gx}" cy="{f(cy - 78)}" r="24" fill="{GREEN}"/>', center_label(gx, cy - 78, "10", 22),
+              f'<path d="M{gx} {f(cy - 52)} L{gx} {f(cy - 30)}" stroke="{GREEN}" stroke-width="3" marker-end="url(#arr-g)"/>']
+    for i, d in enumerate(row):
+        s_els.append(text(85 + i * 70, cy + 116, DIGIT_NAMES[d], 13, TEXT, "normal", "middle"))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: C — между 9 и 0. Цифры стоят по алфавиту названий; «десять» — после «девять» "
+                      "(в < с) и перед «ноль».")
+    save(31, task, sol)
+    return "C (между 9 и 0)"
+
+
+# --- 32. Римские цифры -----------------------------------------------------------------
+def roman(n):
+    out = ""
+    for v, s in ((10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v:
+            out += s
+            n -= v
+    return out
+
+
+def task32():
+    lens = [len(roman(n)) for n in range(1, 11)]
+    shown = [1, 2, 3, 2, 1, 2, 3, 4, 2]
+    assert lens[:9] == shown
+    opts = [1, 2, 3, 4, 5, 0]
+    ans = "ABCDEF"[opts.index(lens[9])]
+    assert ans == "A"
+    card = Card(32, "Какое число следующее?")
+    y = card.body_top + 90
+    t_els, s_els = [], []
+    for i in range(10):
+        x = 40 + i * 72
+        if i == 9:
+            t_els += [rect(x, y, 60, 60, HIDDEN, 8), center_label(x + 30, y + 30, "?", 36)]
+            s_els += [rect(x, y, 60, 60, WHITE, 8, LINE, 2), center_label(x + 30, y + 30, str(lens[9]), 30, GREEN),
+                      green_frame(x, y, 60, 60, 4)]
+        else:
+            els = [rect(x, y, 60, 60, WHITE, 8, LINE, 2), center_label(x + 30, y + 30, str(shown[i]), 30, LINE)]
+            t_els += els
+            s_els += els
+        s_els.append(text(x + 30, y - 14, roman(i + 1), 18, GREEN, "bold", "middle"))
+    card.add_options([lambda x, y_, s, o=o: [center_label(x, y_, str(o), 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — 1. Это число символов в римской записи чисел 1–10: I, II, III, IV, V … IX, X.", ans)
+    save(32, task, sol)
+    return "A (1)"
+
+
+# --- 33. Код Грея ------------------------------------------------------------------------
+def lamps(cx, top, bits, r, step, dashed=False):
+    els = []
+    for k, b in enumerate(bits):
+        cy = top + k * step
+        if dashed:
+            els.append(f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{r}" fill="none" stroke="{LINE}" stroke-width="2" '
+                       f'stroke-dasharray="4 4"/>')
+        else:
+            els.append(f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{r}" fill="{YELLOW if b == "1" else HIDDEN}"'
+                       + (f' stroke="{LINE}" stroke-width="2"' if b == "1" else "") + "/>")
+    return els
+
+
+def task33():
+    states = [format(i ^ (i >> 1), "04b") for i in range(8)]
+    assert states[:7] == ["0000", "0001", "0011", "0010", "0110", "0111", "0101"]
+    for a, b in zip(states, states[1:]):
+        assert sum(x != y for x, y in zip(a, b)) == 1
+    opts = ["0100", "1101", "0110", "1100", "0000", "1111"]
+    ans = "ABCDEF"[opts.index(states[7])]
+    assert ans == "A"
+
+    card = Card(33, "В каждом столбце горят лампы. Какой столбец следующий?")
+    top = card.body_top + 60
+    t_els, s_els = [], []
+    for i, st in enumerate(states):
+        cx = 70 + i * 90
+        if i == 7:
+            t_els += lamps(cx, top, st, 16, 45, dashed=True) + [text(cx, top + 4 * 45 + 8, "?", 30, LINE, "bold", "middle")]
+            s_els += lamps(cx, top, st, 16, 45) + [green_frame(cx - 24, top - 24, 48, 3 * 45 + 48, 2)]
+        else:
+            els = lamps(cx, top, st, 16, 45)
+            t_els += els
+            s_els += els
+        if i:
+            prev = states[i - 1]
+            k = next(j for j in range(4) if prev[j] != st[j])
+            y = top + k * 45
+            s_els.append(f'<path d="M{cx - 70} {f(y)} L{cx - 22} {f(y)}" stroke="{GREEN}" stroke-width="3" '
+                         f'marker-end="url(#arr-g)"/>')
+            s_els.append(text(cx - 45, top - 30, str(3 - k), 15, GREEN, "bold", "middle"))
+    card.add_options([lambda x, y, s, o=o: lamps(x, y - 36, o, 10, 24) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — 0100. За шаг меняется ровно одна лампа, номер разряда идёт по «линейке» "
+                      "0, 1, 0, 2, 0, 1, 0 — это код Грея.", ans)
+    save(33, task, sol)
+    return "A (0100)"
+
+
+# --- 34. Инертные газы ----------------------------------------------------------------------
+def task34():
+    nums = [2, 10, 18, 36, 54, 86]
+    diffs = [b - a for a, b in zip(nums, nums[1:])]
+    assert diffs == [2 * n * n for n in (2, 2, 3, 3, 4)]
+    nxt = nums[-1] + 2 * 4 * 4
+    assert nxt == 118 and nums[-1] + 32 == 118
+    opts = [100, 118, 104, 122, 132, 110]
+    ans = "ABCDEF"[opts.index(nxt)]
+    gases = ["He", "Ne", "Ar", "Kr", "Xe", "Rn", "Og"]
+    cols = [BLUE, RED, GREEN, PURPLE, ORANGE, TEAL, HIDDEN]
+
+    card = Card(34, "Какое число на последнем шаре?")
+    cy = card.body_top + 110
+    t_els, s_els = [], []
+    for i in range(7):
+        cx = 70 + i * 110
+        string = (f'<path d="M{cx} {f(cy + 43)} q-10 20 0 30 t0 30" fill="none" stroke="{LINE}" stroke-width="1.5"/>')
+        ball = lambda col: f'<ellipse cx="{cx}" cy="{f(cy)}" rx="35" ry="43" fill="{col}"/>'
+        if i == 6:
+            t_els += [string, ball(HIDDEN), center_label(cx, cy, "?", 32)]
+            s_els += [string, ball(GREEN), center_label(cx, cy, str(nxt), 28)]
+        else:
+            els = [string, ball(cols[i]), center_label(cx, cy, str(nums[i]), 28)]
+            t_els += els
+            s_els += els
+        s_els.append(text(cx, cy + 128, gases[i], 16, TEXT, "bold", "middle"))
+        if i:
+            d = (diffs + [32])[i - 1]
+            s_els.append(text(cx - 55, cy - 54, str(d), 16, GREEN, "bold", "middle"))
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, str(o), 36, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — 118. Разности 8, 8, 18, 18, 32, 32 (2·2², 2·3², 2·4²): это атомные номера "
+                      "инертных газов.", ans)
+    save(34, task, sol)
+    return "B (118)"
+
+
+# --- 35. Ходы коня ----------------------------------------------------------------------------
+def knight_dist(start):
+    from collections import deque
+    dist = {start: 0}
+    dq = deque([start])
+    while dq:
+        f0, n0 = dq.popleft()
+        for df, dn in ((1, 2), (2, 1), (-1, 2), (-2, 1), (1, -2), (2, -1), (-1, -2), (-2, -1)):
+            p = (f0 + df, n0 + dn)
+            if 0 <= p[0] < 8 and 1 <= p[1] <= 8 and p not in dist:
+                dist[p] = dist[(f0, n0)] + 1
+                dq.append(p)
+    return dist
+
+
+def task35():
+    sq = lambda s: ("abcdefgh".index(s[0]), int(s[1]))
+    dist = knight_dist(sq("a1"))
+    shown = {"b3": 1, "c2": 1, "d4": 2, "h8": 6}
+    for s, v in shown.items():
+        assert dist[sq(s)] == v
+    answer = dist[sq("b2")]
+    path = ["a1", "b3", "c5", "d3", "b2"]
+    for a, b in zip(path, path[1:]):
+        (fa, na), (fb, nb) = sq(a), sq(b)
+        assert sorted((abs(fa - fb), abs(na - nb))) == [1, 2]
+    opts = [1, 2, 3, 4, 5, 6]
+    ans = "ABCDEF"[opts.index(answer)]
+    assert answer == 4
+
+    card = Card(35, "Число в клетке — наименьшее число ходов коня от a1 до этой клетки. Какое число вместо «?»?")
+    X0, Y0, C = 60, 530, 48
+    cxy = lambda s: (X0 + sq(s)[0] * C + C / 2, Y0 - sq(s)[1] * C + C / 2)
+    base = []
+    for fi in range(8):
+        for n in range(1, 9):
+            base.append(rect(X0 + fi * C, Y0 - n * C, C, C, HIDDEN if (fi + n) % 2 == 1 else WHITE))
+    base.append(rect(X0, Y0 - 8 * C, 8 * C, 8 * C, "none", 0, LINE, 2))
+    for fi in range(8):
+        base.append(text(X0 + fi * C + C / 2, Y0 + 18, "abcdefgh"[fi], 14, TEXT, "normal", "middle"))
+    for n in range(1, 9):
+        base.append(text(X0 - 12, Y0 - n * C + C / 2 + 5, str(n), 14, TEXT, "normal", "middle"))
+    x, y = cxy("a1")
+    base.append(text(x, y + 14, "♞", 40, LINE, "normal", "middle"))
+    for s, v in shown.items():
+        base.append(center_label(*cxy(s), str(v), 26, BLUE))
+    t_els, s_els = list(base), list(base)
+    bx, by = cxy("b2")
+    t_els += [f'<circle cx="{f(bx)}" cy="{f(by)}" r="18" fill="{RED}"/>', center_label(bx, by, "?", 22)]
+    pts = [cxy(s) for s in path]
+    s_els.append(f'<polyline points="{" ".join(f"{f(a)},{f(b)}" for a, b in pts)}" fill="none" stroke="{GREEN}" '
+                 f'stroke-width="4" stroke-linejoin="round"/>')
+    s_els += [f'<circle cx="{f(a)}" cy="{f(b)}" r="5" fill="{GREEN}"/>' for a, b in pts[1:-1]]
+    s_els += [f'<circle cx="{f(bx)}" cy="{f(by)}" r="18" fill="{GREEN}"/>', center_label(bx, by, str(answer), 22)]
+    for k, o in enumerate(opts):
+        ox, oy = 510 + (k % 2) * 130, 130 + (k // 2) * 120
+        els = [rect(ox, oy, 110, 110, WHITE, 8, HIDDEN, 2), text(ox + 12, oy + 26, "ABCDEF"[k], 18, TITLE, "bold"),
+               center_label(ox + 55, oy + 58, str(o), 40, LINE)]
+        t_els += els
+        s_els += els
+        if "ABCDEF"[k] == ans:
+            s_els.append(green_frame(ox, oy, 110, 110, 3))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 4. За 2 хода b2 недостижима, а ход коня всегда меняет цвет клетки — "
+                      "значит, ходов чётное число: a1 → b3 → c5 → d3 → b2.")
+    save(35, task, sol)
+    return "D (4)"
+
+
+# --- 36. Развёртка кубика -----------------------------------------------------------------------
+def cube_views():
+    """Все тройки (верх, перед, право) для кубика, сложенного из развёртки-креста."""
+    import itertools
+    faces = {(0, 0, 1): YELLOW, (0, 1, 0): RED, (0, -1, 0): ORANGE,
+             (-1, 0, 0): BLUE, (1, 0, 0): GREEN, (0, 0, -1): PURPLE}
+    views = set()
+    for perm in itertools.permutations(range(3)):
+        for signs in itertools.product((1, -1), repeat=3):
+            m = [[0] * 3 for _ in range(3)]
+            for r, c in enumerate(perm):
+                m[r][c] = signs[r]
+            det = (m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0])
+                   + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]))
+            if det != 1:
+                continue
+            rot = {tuple(sum(m[r][c] * v[c] for c in range(3)) for r in range(3)): col for v, col in faces.items()}
+            views.add((rot[(0, 1, 0)], rot[(0, 0, 1)], rot[(1, 0, 0)]))
+    assert len(views) == 24
+    return views
+
+
+def iso_cube(cx, cy, top, front, right):
+    return [polygon([(cx, cy - 40), (cx + 35, cy - 20), (cx, cy), (cx - 35, cy - 20)], top, LINE, 2),
+            polygon([(cx - 35, cy - 20), (cx, cy), (cx, cy + 40), (cx - 35, cy + 20)], front, LINE, 2),
+            polygon([(cx, cy), (cx + 35, cy - 20), (cx + 35, cy + 20), (cx, cy + 40)], right, LINE, 2)]
+
+
+def task36():
+    views = cube_views()
+    opts = [(RED, GREEN, YELLOW), (RED, YELLOW, ORANGE), (BLUE, YELLOW, GREEN),
+            (RED, PURPLE, BLUE), (YELLOW, RED, GREEN), (ORANGE, YELLOW, GREEN)]
+    valid = [i for i, o in enumerate(opts) if o in views]
+    assert valid == [3]
+    ans = "ABCDEF"[valid[0]]
+
+    card = Card(36, "Какой кубик можно сложить из этой развёртки?")
+    dy = 30
+    net = [(RED, 330, 100), (BLUE, 260, 170), (YELLOW, 330, 170), (GREEN, 400, 170), (PURPLE, 470, 170), (ORANGE, 330, 240)]
+    base = [rect(x, y + dy, 70, 70, c, 0, LINE, 2) for c, x, y in net]
+    t_els, s_els = list(base), list(base)
+    pairs = {RED: "1", ORANGE: "1", BLUE: "2", GREEN: "2", YELLOW: "3", PURPLE: "3"}
+    for c, x, y in net:
+        s_els += [f'<circle cx="{x + 35}" cy="{y + dy + 35}" r="15" fill="{WHITE}" stroke="{LINE}" '
+                  f'stroke-width="1.5" stroke-dasharray="3 3"/>', center_label(x + 35, y + dy + 35, pairs[c], 18, LINE)]
+    s_els.append(text(570, 220, "1, 2, 3 — пары", 15, TEXT))
+    s_els.append(text(570, 240, "противоположных граней", 15, TEXT))
+    card.add_options([lambda x, y, s, o=o: iso_cube(x, y, *o) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D. У кубиков B и C рядом стоят противоположные грани, а A, E, F — зеркальные варианты.", ans)
+    save(36, task, sol)
+    return "D"
+
+
+# --- 37. Башня из костей -----------------------------------------------------------------------
+PIPS = {1: [(0, 0)], 2: [(-1, -1), (1, 1)], 3: [(-1, -1), (0, 0), (1, 1)], 4: [(-1, -1), (1, -1), (-1, 1), (1, 1)],
+        5: [(-1, -1), (1, -1), (0, 0), (-1, 1), (1, 1)], 6: [(-1, -1), (1, -1), (-1, 0), (1, 0), (-1, 1), (1, 1)]}
+
+
+def die(x, y, s, n, r):
+    o = s * 0.27
+    return [rect(x, y, s, s, WHITE, s / 7, LINE, 2)] + [
+        f'<circle cx="{f(x + s / 2 + dx * o)}" cy="{f(y + s / 2 + dy * o)}" r="{f(r)}" fill="{LINE}"/>' for dx, dy in PIPS[n]]
+
+
+def task37():
+    top_face, n_dice = 2, 4
+    hidden = (7 - top_face) + 7 * (n_dice - 1)
+    assert hidden == 26 == 7 * n_dice - top_face
+    opts = [24, 25, 26, 28, 21, 30]
+    ans = "ABCDEF"[opts.index(hidden)]
+
+    card = Card(37, "Четыре обычные игральные кости стоят столбиком. Какова сумма точек на 7 невидимых "
+                    "горизонтальных гранях — всех соприкасающихся и нижней грани нижней кости?")
+    s = 60
+    y0 = card.body_top + 8
+    base = []
+    for k, n in enumerate([3, 1, 4, 5]):
+        base += die(200, y0 + k * s, s, n, 5)
+    for k in range(1, 4):
+        base.append(line(198, y0 + k * s, 262, y0 + k * s, RED, 1.5))
+    base += [text(500, y0 + 4, "вид сверху", 16, TEXT)] + die(500, y0 + 20, 90, top_face, 7)
+    t_els, s_els = list(base), list(base)
+    s_els.append(text(280, y0 + s + 5, "низ = 7 − 2 = 5", 15, GREEN, "bold"))
+    for k in range(1, 4):
+        s_els.append(text(280, y0 + (k + 1) * s + 5 if k < 3 else y0 + 4 * s - 4, "верх + низ = 7", 15, GREEN, "bold"))
+    card.add_options([lambda x, y, s_, o=o: [center_label(x, y, str(o), 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: C — 26. Противоположные грани кости дают в сумме 7: 5 + 7 + 7 + 7 = 26.", ans)
+    save(37, task, sol)
+    return "C (26)"
+
+
+# --- 38. Сложенный лист ------------------------------------------------------------------------
+def tri_cell(x, y, c, d, fill=RED):
+    """Треугольник в клетке c×c, остриём вправо (R) или влево (L)."""
+    a, b = c * 0.27, c * 0.73
+    pts = [(x + a, y + a), (x + b, y + c / 2), (x + a, y + b)] if d == "R" else \
+          [(x + b, y + a), (x + a, y + c / 2), (x + b, y + b)]
+    return polygon(pts, fill)
+
+
+def task38():
+    holes = {(0, 1, "R")}                                             # в сложенном квадрате
+    holes |= {(3 - r, c, d) for r, c, d in holes}                     # разворот 2-го сгиба (горизонтальный)
+    holes |= {(r, 3 - c, "L" if d == "R" else "R") for r, c, d in holes}  # разворот 1-го сгиба (вертикальный)
+    opts = [{(0, 1, "R"), (0, 2, "R"), (3, 1, "R"), (3, 2, "R")},
+            {(0, 1, "R"), (0, 2, "L"), (3, 1, "R"), (3, 2, "L")},
+            {(0, 1, "L"), (0, 2, "R"), (3, 1, "L"), (3, 2, "R")},
+            {(0, 1, "R"), (0, 2, "L"), (1, 1, "R"), (1, 2, "L")},
+            {(0, 1, "R"), (0, 2, "L")},
+            {(0, 1, "R"), (0, 2, "L"), (3, 1, "L"), (3, 2, "R")}]
+    assert [o == holes for o in opts].count(True) == 1
+    ans = "ABCDEF"[opts.index(holes)]
+    assert ans == "B"
+
+    card = Card(38, "Квадратный лист сложили дважды и пробили треугольным дыроколом. Как выглядит развёрнутый лист?")
+    y = card.body_top + 30
+    els = [rect(60, y, 120, 120, WHITE, 0, LINE, 2), line(120, y, 120, y + 120, LINE, 2, ' stroke-dasharray="6 5"'),
+           f'<path d="M155 {y + 40} Q120 {y - 6} 85 {y + 40}" fill="none" stroke="{BLUE}" stroke-width="3" marker-end="url(#arr-b)"/>',
+           rect(280, y, 60, 120, WHITE, 0, LINE, 2), line(280, y + 60, 340, y + 60, LINE, 2, ' stroke-dasharray="6 5"'),
+           f'<path d="M352 {y + 95} Q385 {y + 60} 352 {y + 25}" fill="none" stroke="{BLUE}" stroke-width="3" marker-end="url(#arr-b)"/>',
+           rect(480, y, 60, 60, WHITE, 0), line(480, y, 540, y, LINE, 2), line(480, y, 480, y + 60, LINE, 2),
+           line(540, y, 540, y + 60, LINE, 4), line(480, y + 60, 540, y + 60, LINE, 4),
+           polygon([(517, y + 7), (533, y + 15), (517, y + 23)], RED)]
+    for ax in (215, 420):
+        els.append(f'<path d="M{ax} {y + 60} h30" stroke="{LINE}" stroke-width="3" marker-end="url(#arr-k)"/>')
+    for i, cap in enumerate(["шаг 1", "шаг 2", "шаг 3"]):
+        els.append(text([120, 310, 510][i], y + 146, cap, 14, TEXT, "normal", "middle"))
+
+    def sheet(o, axes=False):
+        def draw(x, yy, s):
+            c, x0, y0 = 22, x - 44, yy - 44
+            g = [rect(x0, y0, 88, 88, WHITE, 0, LINE, 1.5)]
+            g += [line(x0 + k * c, y0, x0 + k * c, y0 + 88, HIDDEN, 1) for k in (1, 2, 3)]
+            g += [line(x0, y0 + k * c, x0 + 88, y0 + k * c, HIDDEN, 1) for k in (1, 2, 3)]
+            g += [tri_cell(x0 + cc * c, y0 + r * c, c, d) for r, cc, d in o]
+            if axes:
+                g += [line(x, y0 - 4, x, y0 + 92, GREEN, 2, ' stroke-dasharray="5 4"'),
+                      line(x0 - 4, yy, x0 + 92, yy, GREEN, 2, ' stroke-dasharray="5 4"')]
+            return g
+        return draw
+
+    card.add_options([sheet(o) for o in opts])
+    card.body = els
+    task = card.render()
+    card.options = []
+    card.add_options([sheet(o, axes=(i == opts.index(holes))) for i, o in enumerate(opts)])
+    sol = card.render("Ответ: B. Отражение через горизонтальный сгиб не меняет «►», "
+                      "через вертикальный — превращает в «◄».", ans)
+    save(38, task, sol)
+    return "B"
+
+
+# --- 39. Кольцо шестерёнок -------------------------------------------------------------------
+def gear(cx, cy, r, teeth, color):
+    pts = []
+    for k in range(teeth * 4):
+        a = 2 * math.pi * k / (teeth * 4)
+        rr = r + 10 if k % 4 in (1, 2) else r
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return [polygon(pts, color), f'<circle cx="{f(cx)}" cy="{f(cy)}" r="8" fill="{WHITE}"/>']
+
+
+def spin_arrow(cx, cy, r, cw, color=LINE):
+    a0, a1 = (-150, 60) if cw else (60, -150)
+    p0 = (cx + r * math.cos(math.radians(a0)), cy + r * math.sin(math.radians(a0)))
+    p1 = (cx + r * math.cos(math.radians(a1)), cy + r * math.sin(math.radians(a1)))
+    return (f'<path d="M{f(p0[0])} {f(p0[1])} A{r} {r} 0 1 {1 if cw else 0} {f(p1[0])} {f(p1[1])}" fill="none" '
+            f'stroke="{color}" stroke-width="3" marker-end="url(#arr-k)"/>')
+
+
+def task39():
+    n = 5
+    dirs = [k % 2 == 0 for k in range(n)]  # True = по часовой; соседние вращаются в разные стороны
+    jammed = dirs[0] == dirs[-1]           # последняя и первая сцеплены, но крутятся одинаково
+    assert jammed and n % 2 == 1
+    card = Card(39, "Шестерёнку 1 поворачивают по часовой стрелке. Что произойдёт с шестерёнкой 3?")
+    ccx, ccy = 250, card.body_top + 200
+    cols = [RED, BLUE, GREEN, ORANGE, PURPLE]
+    pos = [(ccx + 118 * math.cos(math.radians(a)), ccy + 118 * math.sin(math.radians(a))) for a in (-90, -18, 54, 126, 198)]
+    base = []
+    for k, (x, y) in enumerate(pos):
+        base += gear(x, y, 58, 12, cols[k]) + [center_label(x, y + 26, str(k + 1), 24)]
+    t_els = base + [spin_arrow(*pos[0], 36, True)]
+    s_els = list(base) + [spin_arrow(x, y, 36, dirs[k]) for k, (x, y) in enumerate(pos)]
+    mx, my = (pos[4][0] + pos[0][0]) / 2, (pos[4][1] + pos[0][1]) / 2
+    s_els += [line(mx - 12, my - 12, mx + 12, my + 12, RED, 6), line(mx - 12, my + 12, mx + 12, my - 12, RED, 6)]
+    labels = ["A — по часовой", "B — против часовой", "C — не повернётся вообще"]
+    for k, lab in enumerate(labels):
+        y = card.body_top + 90 + k * 100
+        els = [rect(510, y, 260, 70, WHITE, 8, HIDDEN, 2), text(526, y + 41, lab, 18, LINE)]
+        t_els += els
+        s_els += els
+        if k == 2:
+            s_els.append(green_frame(510, y, 260, 70, 3))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: C — механизм заклинит. В замкнутом кольце из нечётного числа шестерёнок "
+                      "соседние 5 и 1 обязаны крутиться в одну сторону.")
+    save(39, task, sol)
+    return "C (заклинит)"
+
+
+# --- 40. Светофор --------------------------------------------------------------------------------
+def traffic(x, y, w, h, state, r, blink=False, q=False):
+    """state: строка из R/Y/G — какие лампы горят."""
+    els = [rect(x, y, w, h, LINE, w / 5)]
+    for col, key, off in ((RED, "R", 0.19), (YELLOW, "Y", 0.5), (GREEN, "G", 0.81)):
+        cy = y + h * off
+        on = key in state
+        if on and blink:
+            els.append(f'<circle cx="{f(x + w / 2)}" cy="{f(cy)}" r="{f(r * 1.4)}" fill="none" stroke="{col}" '
+                       f'stroke-width="2" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{f(x + w / 2)}" cy="{f(cy)}" r="{f(r)}" fill="{col if on else HIDDEN}"/>')
+    if q:
+        els.append(center_label(x + w / 2, y + h / 2, "?", w * 0.6, LINE))
+    return els
+
+
+def task40():
+    cycle = [("G", False), ("G", True), ("Y", False), ("R", False), ("RY", False)]
+    nxt = cycle[4]
+    opts = [("RY", False), ("G", False), ("Y", False), ("Y", True), ("R", True), ("", False)]
+    ans = "ABCDEF"[opts.index(nxt)]
+    assert ans == "A"
+    card = Card(40, "Какой сигнал следующий?")
+    y = card.body_top + 40
+    t_els, s_els = [], []
+    for i in range(5):
+        x = 100 + i * 130
+        if i == 4:
+            t_els += traffic(x, y, 60, 160, "", 20, q=True)
+            s_els += traffic(x, y, 60, 160, nxt[0], 20) + [green_frame(x, y, 60, 160, 6)]
+            continue
+        st, bl = cycle[i]
+        els = traffic(x, y, 60, 160, st, 20, bl)
+        if bl:
+            els.append(text(x + 30, y + 182, "мигает", 14, TEXT, "normal", "middle"))
+        t_els += els
+        s_els += els
+    card.add_options([lambda cx, cy, s, o=o: traffic(cx - 18, cy - 48, 36, 96, o[0], 10, o[1]) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — красный + жёлтый. По ПДД РФ (п. 6.2) это сочетание запрещает движение "
+                      "и предупреждает о скором зелёном.", ans)
+    save(40, task, sol)
+    return "A (красный + жёлтый)"
+
+
+# --- 41. Клавиши ------------------------------------------------------------------------------------
+SEMI = {"C": 0, "C#": 1, "D": 2, "D#": 3, "E": 4, "F": 5, "F#": 6, "G": 7, "G#": 8, "A": 9, "A#": 10, "B": 11}
+
+
+def keyboard(x, y, whites, blacks_after, fills, nums, num_color=WHITE):
+    """whites: ноты белых клавиш; blacks_after: индексы белых, после которых стоит чёрная."""
+    els = []
+    for i, nt in enumerate(whites):
+        els.append(rect(x + i * 40, y, 40, 160, fills.get(i, WHITE), 0, LINE, 2))
+        if i in nums:
+            els.append(text(x + i * 40 + 20, y + 146, str(nums[i]), 18, num_color, "bold", "middle"))
+    for i in blacks_after:
+        els.append(rect(x + (i + 1) * 40 - 12, y, 24, 100, LINE, 2))
+    return els
+
+
+def task41():
+    major = [2, 2, 1, 2, 2, 2, 1]
+    names = {v: k for k, v in SEMI.items()}
+    scale = [7]
+    for st in major:
+        scale.append(scale[-1] + st)
+    notes = [names[s % 12] for s in scale]
+    assert notes == ["G", "A", "B", "C", "D", "E", "F#", "G"]
+    seventh = notes[6]
+    opts = ["F", "F#", "G", "D#"]
+    ans = "ABCD"[opts.index(seventh)]
+
+    card = Card(41, "Верхняя клавиатура — образец. Какую клавишу нажать седьмой на нижней?")
+    ty, by = card.body_top + 12, card.body_top + 212
+    top_w = list("CDEFGABC")
+    bot_w = list("GABCDEFG")
+    top = keyboard(240, ty, top_w, [0, 1, 3, 4, 5], {i: BLUE for i in range(8)}, {i: i + 1 for i in range(8)})
+    bot = keyboard(240, by, bot_w, [0, 1, 3, 4, 6], {i: BLUE for i in range(6)}, {i: i + 1 for i in range(6)})
+    spots = {"F": (240 + 6 * 40 + 20, by + 112), "F#": (240 + 7 * 40, by + 30),
+             "G": (240 + 7 * 40 + 20, by + 112), "D#": (240 + 5 * 40, by + 30)}
+
+    def marks(highlight=None):
+        els = []
+        for k, o in enumerate(opts):
+            x, y = spots[o]
+            col = GREEN if o == highlight else ORANGE
+            els += [f'<circle cx="{f(x)}" cy="{f(y)}" r="14" fill="{col}"/>', center_label(x, y, "ABCD"[k], 16)]
+        return els
+
+    t_els = top + bot + marks()
+    sol_bot = keyboard(240, by, bot_w, [0, 1, 3, 4, 6], {i: BLUE for i in range(6)} | {7: BLUE},
+                       {i: i + 1 for i in range(6)} | {7: 8})
+    fs = rect(240 + 7 * 40 - 12, by, 24, 100, "#1F5F99", 2, LINE, 2)
+    s_els = top + sol_bot + [fs, text(240 + 7 * 40, by + 88, "7", 16, WHITE, "bold", "middle")] + marks(seventh)
+    s_els.append(text(400, ty + 188, "тон, тон, полутон, тон, тон, тон, полутон", 15, GREEN, "bold", "middle"))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — чёрная клавиша F♯ (фа-диез). Образец — мажорная гамма; в соль мажоре "
+                      "седьмая ступень — фа-диез.")
+    save(41, task, sol)
+    return "B (F♯)"
+
+
+# --- 42. Пасьянс --------------------------------------------------------------------------------------
+def playing_card(x, y, w, h, value, suit, back=False):
+    if back:
+        return [rect(x, y, w, h, BLUE, w / 9, LINE, 2), center_label(x + w / 2, y + h / 2, "?", w * 0.5)]
+    col = RED if suit in "♥♦" else LINE
+    return [rect(x, y, w, h, WHITE, w / 9, LINE, 2),
+            text(x + w * 0.1, y + h * 0.22, value, f(w * 0.27), col, "bold"),
+            text(x + w / 2, y + h * 0.7, suit, f(w * 0.53), col, "normal", "middle")]
+
+
+def task42():
+    suits = "♠♥♣♦"
+    vals = [1 + 2 * i for i in range(5)]
+    seq = [(vals[i], suits[i % 4]) for i in range(5)]
+    show = lambda v: "A" if v == 1 else str(v)
+    assert [(show(v), s) for v, s in seq[:4]] == [("A", "♠"), ("3", "♥"), ("5", "♣"), ("7", "♦")]
+    opts = [("9", "♠"), ("9", "♥"), ("8", "♠"), ("9", "♦"), ("10", "♠"), ("2", "♠")]
+    ans = "ABCDEF"[opts.index((show(seq[4][0]), seq[4][1]))]
+    assert ans == "A"
+    card = Card(42, "Какая карта следующая?")
+    y = card.body_top + 50
+    x0 = (W - (5 * 90 + 4 * 30)) / 2
+    t_els, s_els = [], []
+    for i, (v, s) in enumerate(seq):
+        x = x0 + i * 120
+        if i == 4:
+            t_els += playing_card(x, y, 90, 130, "", "", back=True)
+            s_els += playing_card(x, y, 90, 130, show(v), s) + [green_frame(x, y, 90, 130, 4)]
+        else:
+            els = playing_card(x, y, 90, 130, show(v), s)
+            t_els += els
+            s_els += els
+    card.add_options([lambda cx, cy, sz, o=o: playing_card(cx - 32, cy - 46, 64, 92, *o) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — 9♠. Значения растут на 2 (туз = 1), масти идут по кругу ♠ ♥ ♣ ♦.", ans)
+    save(42, task, sol)
+    return "A (9♠)"
+
+
+# --- 43. Задача Бонгарда ---------------------------------------------------------------------------------
+def is_convex(pts):
+    sgn = set()
+    n = len(pts)
+    for i in range(n):
+        (x1, y1), (x2, y2), (x3, y3) = pts[i], pts[(i + 1) % n], pts[(i + 2) % n]
+        cr = (x2 - x1) * (y3 - y2) - (y2 - y1) * (x3 - x2)
+        if abs(cr) > 1e-9:
+            sgn.add(cr > 0)
+    return len(sgn) == 1
+
+
+def task43():
+    sc = 0.75
+    star = [((38 if k % 2 == 0 else 16) * math.cos(-math.pi / 2 + k * math.pi / 5),
+             (38 if k % 2 == 0 else 16) * math.sin(-math.pi / 2 + k * math.pi / 5)) for k in range(10)]
+    pent = [(36 * math.cos(-math.pi / 2 + k * 2 * math.pi / 5), 36 * math.sin(-math.pi / 2 + k * 2 * math.pi / 5)) for k in range(5)]
+    L = {"tri": [(0, -35), (35, 30), (-35, 30)], "rhomb": [(0, -38), (38, 0), (0, 38), (-38, 0)], "pent": pent,
+         "hex": [(-20, -35), (25, -30), (40, 0), (20, 35), (-25, 30), (-40, 5)]}
+    P = {"star": star, "L": [(-30, -35), (-10, -35), (-10, 15), (30, 15), (30, 35), (-30, 35)],
+         "arrow": [(-35, -10), (5, -10), (5, -30), (38, 0), (5, 30), (5, 10), (-35, 10)],
+         "plus": [(-11, -35), (11, -35), (11, -11), (35, -11), (35, 11), (11, 11), (11, 35), (-11, 35),
+                  (-11, 11), (-35, 11), (-35, -11), (-11, -11)]}
+    tip = [(0, -45), (38, 40), (0, 15), (-38, 40)]
+    assert all(is_convex(p) for p in L.values()) and not any(is_convex(p) for p in P.values())
+    assert not is_convex(tip)
+
+    def poly_at(pts, cx, cy, col, s=sc):
+        return polygon([(cx + s * x, cy + s * y) for x, y in pts], col)
+
+    def pacman(cx, cy, col, s=sc):
+        r = 35 * s
+        a = math.radians(30)
+        return (f'<path d="M{f(cx)} {f(cy)} L{f(cx + r * math.cos(a))} {f(cy - r * math.sin(a))} '
+                f'A{f(r)} {f(r)} 0 1 0 {f(cx + r * math.cos(a))} {f(cy + r * math.sin(a))} Z" fill="{col}"/>')
+
+    left = [lambda cx, cy: poly_at(L["tri"], cx, cy, RED),
+            lambda cx, cy: f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(35 * sc)}" fill="{BLUE}"/>',
+            lambda cx, cy: poly_at(L["rhomb"], cx, cy, GREEN),
+            lambda cx, cy: poly_at(pent, cx, cy + 3, PURPLE),
+            lambda cx, cy: f'<ellipse cx="{f(cx)}" cy="{f(cy)}" rx="{f(40 * sc)}" ry="{f(22 * sc)}" fill="{ORANGE}"/>',
+            lambda cx, cy: poly_at(L["hex"], cx, cy, PINK)]
+    right = [lambda cx, cy: poly_at(star, cx, cy + 3, YELLOW),
+             lambda cx, cy: poly_at(P["L"], cx, cy, BLUE),
+             lambda cx, cy: (f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(35 * sc)}" fill="{GREEN}"/>'
+                             f'<circle cx="{f(cx + 18 * sc)}" cy="{f(cy)}" r="{f(30 * sc)}" fill="{WHITE}"/>'),
+             lambda cx, cy: poly_at(P["arrow"], cx, cy, RED),
+             lambda cx, cy: pacman(cx, cy, ORANGE),
+             lambda cx, cy: poly_at(P["plus"], cx, cy, PURPLE)]
+
+    card = Card(43, "Все шесть фигур слева обладают свойством, которого нет ни у одной фигуры справа. "
+                    "Куда отнести новую фигуру?")
+    top = card.body_top + 28
+    base = [line(400, top - 24, 400, top + 262, LINE, 2),
+            text(185, top - 8, "Группа Л", 18, TITLE, "bold", "middle"),
+            text(615, top - 8, "Группа П", 18, TITLE, "bold", "middle")]
+    ps = 80
+    for k in range(6):
+        for figs, xs in ((left, (100, 190)), (right, (520, 610))):
+            x, y = xs[k % 2], top + (k // 2) * 90
+            base += [rect(x, y, ps, ps, WHITE, 0, "#444444", 1), figs[k](x + ps / 2, y + ps / 2)]
+    fx, fy = 350, top + 272
+    base += [rect(fx, fy, 100, 100, WHITE, 0, "#444444", 1),
+             polygon([(fx + 50 + 0.9 * x, fy + 52 + 0.9 * y) for x, y in tip], TEAL)]
+    btns = [(130, "A — в группу Л"), (520, "B — в группу П")]
+    t_els, s_els = list(base), list(base)
+    for k, (bx, lab) in enumerate(btns):
+        els = [rect(bx, fy + 30, 150, 40, WHITE, 8, HIDDEN, 2), text(bx + 75, fy + 56, lab, 18, LINE, "normal", "middle")]
+        t_els += els
+        s_els += els
+        if k == 1:
+            s_els.append(green_frame(bx, fy + 30, 150, 40, 3))
+    s_els.append(line(fx + 50 - 34, fy + 52 + 36, fx + 50 + 34, fy + 52 + 36, GREEN, 2.5, ' stroke-dasharray="5 4"'))
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — в группу П. Слева выпуклые фигуры, справа невыпуклые; «наконечник» похож "
+                      "на треугольник, но у него есть входящий угол.")
+    save(43, task, sol)
+    return "B (группа П)"
+
+
+# --- 44. Химическая орфография ----------------------------------------------------------------------------
+ELEMENTS = ("H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr "
+            "Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb "
+            "Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf "
+            "Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og").split()
+
+
+def spellable(word):
+    word = word.lower()
+    symbols = {e.lower() for e in ELEMENTS}
+    ok = [True] + [False] * len(word)
+    for i in range(1, len(word) + 1):
+        ok[i] = any(ok[i - k] and word[i - k:i] in symbols for k in (1, 2) if i - k >= 0)
+    return ok[-1]
+
+
+def task44():
+    assert len(ELEMENTS) == 118
+    num = lambda s: ELEMENTS.index(s) + 1
+    assert (num("Ne"), num("O"), num("N")) == (10, 8, 7)
+    opts = ["BACON", "SPACE", "GENIUS", "HOUSE", "MAGIC", "FUNNY"]
+    splits = {"BACON": "Ba·Co·N", "SPACE": "S·Pa·Ce", "GENIUS": "Ge·Ni·U·S", "HOUSE": "Ho·U·Se", "FUNNY": "F·U·N·N·Y"}
+    for w, sp in splits.items():
+        parts = sp.split("·")
+        assert "".join(parts).upper() == w and all(p in ELEMENTS for p in parts)
+    bad = [w for w in opts if not spellable(w)]
+    assert bad == ["MAGIC"]
+    ans = "ABCDEF"[opts.index("MAGIC")]
+
+    card = Card(44, "Пример: NEON = Ne + O + N. Какое слово нельзя целиком составить из символов химических элементов?")
+    y = card.body_top + 70
+    els = [text(110, y + 36, "NEON", 30, LINE, "bold"), text(220, y + 36, "=", 30, LINE, "bold")]
+    x = 260
+    for k, sym in enumerate(["Ne", "O", "N"]):
+        els += [rect(x, y, 50, 50, TEAL, 0, LINE, 2), text(x + 5, y + 13, str(num(sym)), 11, WHITE, "bold"),
+                center_label(x + 25, y + 28, sym, 22)]
+        x += 50
+        if k < 2:
+            els.append(text(x + 20, y + 36, "+", 30, LINE, "bold", "middle"))
+            x += 40
+
+    def opt(w, show=False):
+        def draw(cx, cy, s):
+            g = [center_label(cx, cy - (8 if show else 0), w, 22, LINE)]
+            if show:
+                g.append(text(cx, cy + 26, splits.get(w, "—"), 13, GREEN if w in splits else RED, "bold", "middle"))
+            return g
+        return draw
+
+    card.add_options([opt(w) for w in opts])
+    card.body = els
+    task = card.render()
+    card.options = []
+    card.add_options([opt(w, True) for w in opts])
+    sol = card.render("Ответ: E — MAGIC. Нет ни «M», ни «Ma»: на M начинаются только Mc, Md, Mg, Mn, Mo, Mt.", ans)
+    save(44, task, sol)
+    return "E (MAGIC)"
+
+
+# =============================================================================
 # index.html
 # =============================================================================
 INDEX_TEMPLATE = """<!doctype html>
@@ -1528,7 +2557,7 @@ def build_index(answers):
         encoding="utf-8")
 
 
-TASKS = {n: globals()[f"task{n:02d}"] for n in range(1, 25)}
+TASKS = {n: globals()[f"task{n:02d}"] for n in range(1, 45)}
 
 if __name__ == "__main__":
     nums = [int(a) for a in sys.argv[1:]] or sorted(TASKS)

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 26</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Шифр тот же: пара «цвет + форма» однозначно задаёт букву. Слева восемь слов</text>
+  <text x="40" y="104" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">одного ряда в естественном порядке, одна буква открыта. Подсказка выглядывает</text>
+  <text x="40" y="128" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">из-за левого края. Расшифруйте слово справа.</text>
+  <circle cx="0" cy="349" r="40" fill="#F1C40F"/>
+  <line x1="15.73" y1="305.77" x2="21.89" y2="288.86" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="34.18" y1="318.22" x2="47.56" y2="306.18" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="44.63" y1="337.87" x2="62.1" y2="333.52" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="44.63" y1="360.13" x2="62.1" y2="364.48" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="34.18" y1="379.78" x2="47.56" y2="391.82" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <line x1="15.73" y1="392.23" x2="21.89" y2="409.14" stroke="#F1C40F" stroke-width="4" stroke-linecap="round"/>
+  <rect x="60" y="152" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <text x="82" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <circle cx="132" cy="174" r="22" fill="#3498DB"/>
+  <text x="132" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="160" y="152" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="182" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="210" y="152" width="44" height="44" rx="0" fill="#F39C12"/>
+  <text x="232" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <circle cx="282" cy="174" r="22" fill="#9B59B6"/>
+  <text x="282" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">У</text>
+  <rect x="310" y="152" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="332" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="360" y="152" width="44" height="44" rx="13.2" fill="#1ABC9C"/>
+  <text x="382" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">И</text>
+  <rect x="410" y="152" width="44" height="44" rx="0" fill="#FF6FA8"/>
+  <text x="432" y="181.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Й</text>
+  <circle cx="182" cy="224" r="22" fill="#F1C40F"/>
+  <text x="182" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">В</text>
+  <circle cx="232" cy="224" r="22" fill="#3498DB"/>
+  <text x="232" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="260" y="202" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="282" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <circle cx="332" cy="224" r="22" fill="#3498DB"/>
+  <text x="332" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="360" y="202" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="382" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="410" y="202" width="44" height="44" rx="0" fill="#3498DB"/>
+  <text x="432" y="231.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <circle cx="232" cy="274" r="22" fill="#27AE60"/>
+  <text x="232" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">З</text>
+  <circle cx="282" cy="274" r="22" fill="#3498DB"/>
+  <text x="282" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="310" y="252" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <text x="332" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <rect x="360" y="252" width="44" height="44" rx="13.2" fill="#F39C12"/>
+  <text x="382" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Л</text>
+  <rect x="410" y="252" width="44" height="44" rx="0" fill="#9B59B6"/>
+  <text x="432" y="281.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Я</text>
+  <rect x="260" y="302" width="44" height="44" rx="0" fill="#E74C3C"/>
+  <text x="282" y="331.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <rect x="310" y="302" width="44" height="44" rx="0" fill="#3498DB"/>
+  <text x="332" y="331.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="360" y="302" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="382" y="331.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <circle cx="432" cy="324" r="22" fill="#1ABC9C"/>
+  <text x="432" y="331.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">С</text>
+  <rect x="160" y="352" width="44" height="44" rx="13.2" fill="#FF6FA8"/>
+  <text x="182" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ю</text>
+  <rect x="210" y="352" width="44" height="44" rx="0" fill="#F1C40F"/>
+  <text x="232" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">П</text>
+  <rect x="260" y="352" width="44" height="44" rx="13.2" fill="#1ABC9C"/>
+  <text x="282" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">И</text>
+  <circle cx="332" cy="374" r="22" fill="#E74C3C"/>
+  <text x="332" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Т</text>
+  <circle cx="382" cy="374" r="22" fill="#3498DB"/>
+  <text x="382" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="410" y="352" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="432" y="381.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <circle cx="182" cy="424" r="22" fill="#1ABC9C"/>
+  <text x="182" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">С</text>
+  <rect x="210" y="402" width="44" height="44" rx="0" fill="#3498DB"/>
+  <text x="232" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <circle cx="282" cy="424" r="22" fill="#E74C3C"/>
+  <text x="282" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Т</text>
+  <circle cx="332" cy="424" r="22" fill="#9B59B6"/>
+  <text x="332" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">У</text>
+  <rect x="360" y="402" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="382" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="410" y="402" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="432" y="431.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <circle cx="282" cy="474" r="22" fill="#9B59B6"/>
+  <text x="282" y="481.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">У</text>
+  <rect x="310" y="452" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="332" y="481.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="360" y="452" width="44" height="44" rx="0" fill="#3498DB"/>
+  <text x="382" y="481.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="410" y="452" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="432" y="481.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <rect x="160" y="502" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="182" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <circle cx="232" cy="524" r="22" fill="#3498DB"/>
+  <text x="232" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <rect x="260" y="502" width="44" height="44" rx="0" fill="#F1C40F"/>
+  <text x="282" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">П</text>
+  <circle cx="332" cy="524" r="22" fill="#E74C3C"/>
+  <text x="332" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Т</text>
+  <circle cx="382" cy="524" r="22" fill="#9B59B6"/>
+  <text x="382" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">У</text>
+  <rect x="410" y="502" width="44" height="44" rx="13.2" fill="#E74C3C"/>
+  <text x="432" y="531.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <text x="490" y="252" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Расшифруйте:</text>
+  <circle cx="512" cy="294" r="22" fill="#1ABC9C"/>
+  <text x="512" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">С</text>
+  <text x="512" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">С</text>
+  <circle cx="562" cy="294" r="22" fill="#3498DB"/>
+  <text x="562" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <text x="562" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">Е</text>
+  <rect x="590" y="272" width="44" height="44" rx="0" fill="#F39C12"/>
+  <text x="612" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <text x="612" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">К</text>
+  <rect x="640" y="272" width="44" height="44" rx="13.2" fill="#27AE60"/>
+  <text x="662" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <text x="662" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">Р</text>
+  <circle cx="712" cy="294" r="22" fill="#3498DB"/>
+  <text x="712" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Е</text>
+  <text x="712" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">Е</text>
+  <circle cx="762" cy="294" r="22" fill="#E74C3C"/>
+  <text x="762" y="301.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Т</text>
+  <text x="762" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#27AE60" text-anchor="middle">Т</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: СЕКРЕТ. Восемь планет по порядку от Солнца; справа С-Е-К-Р-Е-Т.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 32</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какое число следующее?</text>
+  <rect x="40" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="70" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <text x="70" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">I</text>
+  <rect x="112" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="142" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="142" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">II</text>
+  <rect x="184" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="214" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="214" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">III</text>
+  <rect x="256" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="286" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="286" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">IV</text>
+  <rect x="328" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="358" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <text x="358" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">V</text>
+  <rect x="400" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="430" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="430" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">VI</text>
+  <rect x="472" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="502" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="502" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">VII</text>
+  <rect x="544" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="574" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <text x="574" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">VIII</text>
+  <rect x="616" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="646" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="646" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">IX</text>
+  <rect x="688" y="188" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#222222" stroke-width="2"/>
+  <text x="718" y="228.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#27AE60" text-anchor="middle">1</text>
+  <rect x="684" y="184" width="68" height="68" fill="none" stroke="#27AE60" stroke-width="5" rx="4"/>
+  <text x="718" y="174" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#27AE60" text-anchor="middle">X</text>
+  <rect x="40" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="95" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <text x="95" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="162" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="217" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="217" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="284" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="339" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="339" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="406" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="461" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <text x="461" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+  <rect x="528" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="583" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">5</text>
+  <text x="583" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">E</text>
+  <rect x="650" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="705" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">0</text>
+  <text x="705" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">F</text>
+  <rect x="37" y="407" width="116" height="116" fill="none" stroke="#27AE60" stroke-width="5" rx="4"/>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: A — 1. Это число символов в римской записи чисел 1–10: I, II, III, IV, V … IX, X.</text>
+</svg>

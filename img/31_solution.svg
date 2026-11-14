@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 31</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Цифры выстроены по одному правилу. Где в этом ряду должно встать число 10?</text>
+  <circle cx="85" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="85" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">8</text>
+  <circle cx="155" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="155" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <circle cx="225" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="225" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">9</text>
+  <circle cx="295" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="295" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">0</text>
+  <circle cx="365" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="365" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <circle cx="435" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="435" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">5</text>
+  <circle cx="505" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="505" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">7</text>
+  <circle cx="575" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="575" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <circle cx="645" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="645" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <circle cx="715" cy="258" r="28" fill="#FFFFFF" stroke="#222222" stroke-width="3"/>
+  <text x="715" y="268.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#222222" text-anchor="middle">6</text>
+  <polygon points="50,302 41,316 59,316" fill="#3498DB"/>
+  <text x="50" y="338" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498DB" text-anchor="middle">A</text>
+  <polygon points="190,302 181,316 199,316" fill="#3498DB"/>
+  <text x="190" y="338" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498DB" text-anchor="middle">B</text>
+  <polygon points="260,298 246,320 274,320" fill="#27AE60"/>
+  <text x="260" y="346" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="bold" fill="#27AE60" text-anchor="middle">C</text>
+  <polygon points="330,302 321,316 339,316" fill="#3498DB"/>
+  <text x="330" y="338" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498DB" text-anchor="middle">D</text>
+  <polygon points="400,302 391,316 409,316" fill="#3498DB"/>
+  <text x="400" y="338" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498DB" text-anchor="middle">E</text>
+  <polygon points="750,302 741,316 759,316" fill="#3498DB"/>
+  <text x="750" y="338" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#3498DB" text-anchor="middle">F</text>
+  <circle cx="260" cy="180" r="24" fill="#27AE60"/>
+  <text x="260" y="187.92" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle">10</text>
+  <path d="M260 206 L260 228" stroke="#27AE60" stroke-width="3" marker-end="url(#arr-g)"/>
+  <text x="85" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">восемь</text>
+  <text x="155" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">два</text>
+  <text x="225" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">девять</text>
+  <text x="295" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">ноль</text>
+  <text x="365" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">один</text>
+  <text x="435" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">пять</text>
+  <text x="505" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">семь</text>
+  <text x="575" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">три</text>
+  <text x="645" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">четыре</text>
+  <text x="715" y="374" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">шесть</text>
+  <text x="40" y="567" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: C — между 9 и 0. Цифры стоят по алфавиту названий; «десять» — после «девять»</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">(в &lt; с) и перед «ноль».</text>
+</svg>

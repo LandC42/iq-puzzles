@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 25</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Каждая буква всегда изображается одной и той же парой «цвет + форма». Семь</text>
+  <text x="40" y="104" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">слов из одного известного ряда записаны в перемешанном порядке. Какая буква</text>
+  <text x="40" y="128" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">под знаком «?»?</text>
+  <rect x="300" y="150" width="52" height="52" rx="0" fill="#3498DB"/>
+  <circle cx="384" cy="176" r="26" fill="#1ABC9C"/>
+  <rect x="300" y="208" width="52" height="52" rx="15.6" fill="#F1C40F"/>
+  <text x="326" y="243.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ф</text>
+  <rect x="358" y="208" width="52" height="52" rx="0" fill="#FF6FA8"/>
+  <rect x="300" y="266" width="52" height="52" rx="0" fill="#E74C3C"/>
+  <circle cx="384" cy="292" r="26" fill="#3498DB"/>
+  <rect x="300" y="324" width="52" height="52" rx="0" fill="#3498DB"/>
+  <circle cx="384" cy="350" r="26" fill="#3498DB"/>
+  <rect x="416" y="324" width="52" height="52" rx="15.6" fill="#E74C3C"/>
+  <circle cx="500" cy="350" r="26" fill="#27AE60"/>
+  <text x="500" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ь</text>
+  <rect x="300" y="382" width="52" height="52" rx="15.6" fill="#9B59B6"/>
+  <circle cx="384" cy="408" r="26" fill="#1ABC9C"/>
+  <rect x="300" y="440" width="52" height="52" rx="15.6" fill="#D0D3D8"/>
+  <text x="326" y="477.23" font-family="Inter, Arial, sans-serif" font-size="31.2" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+  <rect x="358" y="440" width="52" height="52" rx="0" fill="#9B59B6"/>
+  <rect x="300" y="498" width="52" height="52" rx="0" fill="#27AE60"/>
+  <circle cx="384" cy="524" r="26" fill="#F39C12"/>
+</svg>
