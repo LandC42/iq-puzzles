@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 23</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Чему равен МИР?</text>
+  <path d="M98 200.0 C76 170 84 126 122 120" fill="none" stroke="#8B6B3D" stroke-width="2"/>
+  <path d="M106 150 H360 Q370 150 370 160 V240 Q370 250 360 250 H106 L70 200.0 Z" fill="#FFE08A" stroke="#D9B44A" stroke-width="2"/>
+  <circle cx="98" cy="200.0" r="7" fill="#FFFFFF" stroke="#C9A23C" stroke-width="2"/>
+  <text x="130" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">К</text>
+  <text x="154" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">О</text>
+  <text x="185" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">Т</text>
+  <text x="223" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">=</text>
+  <text x="260" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">48</text>
+  <path d="M458 200.0 C436 170 444 126 482 120" fill="none" stroke="#8B6B3D" stroke-width="2"/>
+  <path d="M466 150 H720 Q730 150 730 160 V240 Q730 250 720 250 H466 L430 200.0 Z" fill="#FFE08A" stroke="#D9B44A" stroke-width="2"/>
+  <circle cx="458" cy="200.0" r="7" fill="#FFFFFF" stroke="#C9A23C" stroke-width="2"/>
+  <text x="490" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">Д</text>
+  <text x="519" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">О</text>
+  <text x="550" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">М</text>
+  <text x="597" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">=</text>
+  <text x="634" y="222" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">35</text>
+  <path d="M98 370.0 C76 340 84 296 122 290" fill="none" stroke="#8B6B3D" stroke-width="2"/>
+  <path d="M106 320 H360 Q370 320 370 330 V410 Q370 420 360 420 H106 L70 370.0 Z" fill="#FFE08A" stroke="#D9B44A" stroke-width="2"/>
+  <circle cx="98" cy="370.0" r="7" fill="#FFFFFF" stroke="#C9A23C" stroke-width="2"/>
+  <text x="130" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">С</text>
+  <text x="159" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">О</text>
+  <text x="190" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">К</text>
+  <text x="228" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">=</text>
+  <text x="265" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">47</text>
+  <path d="M458 370.0 C436 340 444 296 482 290" fill="none" stroke="#8B6B3D" stroke-width="2"/>
+  <path d="M466 320 H720 Q730 320 730 330 V410 Q730 420 720 420 H466 L430 370.0 Z" fill="#FFE08A" stroke="#D9B44A" stroke-width="2"/>
+  <circle cx="458" cy="370.0" r="7" fill="#FFFFFF" stroke="#C9A23C" stroke-width="2"/>
+  <text x="490" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">М</text>
+  <text x="523" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">И</text>
+  <text x="552" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">Р</text>
+  <text x="593" y="392" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="start">=</text>
+  <rect x="630" y="354" width="64" height="48" rx="10" fill="#D0D3D8"/>
+  <text x="662" y="388.8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 20</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какое число в центре последнего треугольника?</text>
+  <polygon points="121,228 41,366.56 201,366.56" fill="none" stroke="#E74C3C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="121" y="272.87" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="73" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <text x="169" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="121" y="331.18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#E74C3C" text-anchor="middle">10</text>
+  <polygon points="307,228 227,366.56 387,366.56" fill="none" stroke="#E74C3C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="307" y="272.87" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">5</text>
+  <text x="259" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="355" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <text x="307" y="331.18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#E74C3C" text-anchor="middle">9</text>
+  <polygon points="493,228 413,366.56 573,366.56" fill="none" stroke="#E74C3C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="493" y="272.87" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">6</text>
+  <text x="445" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="541" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <text x="493" y="331.18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#E74C3C" text-anchor="middle">14</text>
+  <polygon points="679,228 599,366.56 759,366.56" fill="none" stroke="#E74C3C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="679" y="272.87" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">7</text>
+  <text x="631" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="727" y="356.01" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">5</text>
+  <text x="679" y="331.18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="bold" fill="#27AE60" text-anchor="middle">9</text>
+  <rect x="657" y="301.38" width="44" height="38" fill="none" stroke="#27AE60" stroke-width="5" rx="4"/>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: 9. Центр = верх × левый − правый: 3·4−2 = 10, 5·2−1 = 9, 6·3−4 = 14, 7·2−5 = 9.</text>
+</svg>

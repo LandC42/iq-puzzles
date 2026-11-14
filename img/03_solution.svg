@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 3</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какая буква следующая?</text>
+  <circle cx="85" cy="300" r="40" fill="#3498DB"/>
+  <text x="85" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <text x="85" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">один</text>
+  <circle cx="175" cy="300" r="40" fill="#3498DB"/>
+  <text x="175" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Д</text>
+  <text x="175" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">два</text>
+  <circle cx="265" cy="300" r="40" fill="#3498DB"/>
+  <text x="265" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Т</text>
+  <text x="265" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">три</text>
+  <circle cx="355" cy="300" r="40" fill="#3498DB"/>
+  <text x="355" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ч</text>
+  <text x="355" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">четыре</text>
+  <circle cx="445" cy="300" r="40" fill="#3498DB"/>
+  <text x="445" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">П</text>
+  <text x="445" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">пять</text>
+  <circle cx="535" cy="300" r="40" fill="#3498DB"/>
+  <text x="535" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ш</text>
+  <text x="535" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">шесть</text>
+  <circle cx="625" cy="300" r="40" fill="#3498DB"/>
+  <text x="625" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">С</text>
+  <text x="625" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">семь</text>
+  <circle cx="715" cy="300" r="40" fill="#27AE60"/>
+  <text x="715" y="314.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">В</text>
+  <circle cx="715" cy="300" r="46" fill="none" stroke="#27AE60" stroke-width="5"/>
+  <text x="715" y="372" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="normal" fill="#444444" text-anchor="middle">восемь</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: В. Это первые буквы числительных: один, два, три … семь, восемь.</text>
+</svg>

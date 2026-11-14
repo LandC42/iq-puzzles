@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 15</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какая карточка лишняя?</text>
+  <rect x="40" y="188" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <polygon points="70.07,291.93 70.07,222.07 139.93,222.07 139.93,291.93" fill="none" stroke="#3498DB" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="91.93,274.98 83.86,250.13 105,234.77 126.14,250.13 118.07,274.98" fill="#F39C12"/>
+  <text x="105" y="342" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="187.5" y="188" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <polygon points="209.72,281.7 252.5,207.6 295.28,281.7" fill="none" stroke="#3498DB" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="236.78,272.72 236.78,241.28 268.22,241.28 268.22,272.72" fill="#F39C12"/>
+  <text x="252.5" y="342" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="335" y="188" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <polygon points="375.3,299.78 350.6,257 375.3,214.22 424.7,214.22 449.4,257 424.7,299.78" fill="none" stroke="#3498DB" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="390.35,277.03 378.33,261.95 382.62,243.14 400,234.77 417.38,243.14 421.67,261.95 409.65,277.03" fill="#F39C12"/>
+  <text x="400" y="342" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="482.5" y="188" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <polygon points="518.46,296.97 500.52,241.73 547.5,207.6 594.48,241.73 576.54,296.97" fill="none" stroke="#3498DB" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="531.78,272.72 531.78,241.28 563.22,241.28 563.22,272.72" fill="#F39C12"/>
+  <text x="547.5" y="342" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+  <rect x="630" y="188" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <polygon points="665.96,296.97 648.02,241.73 695,207.6 741.98,241.73 724.04,296.97" fill="none" stroke="#3498DB" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="683.88,276.25 672.77,257 683.88,237.75 706.12,237.75 717.23,257 706.12,276.25" fill="#F39C12"/>
+  <text x="695" y="342" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">E</text>
+  <rect x="479.5" y="185" width="136" height="136" fill="none" stroke="#27AE60" stroke-width="5" rx="4"/>
+  <text x="40" y="567" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: D. У внутренней фигуры обычно на одну сторону больше, чем у внешней, а в D —</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">на одну меньше.</text>
+</svg>

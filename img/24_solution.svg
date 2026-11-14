@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 24</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какое слово лишнее?</text>
+  <rect x="81" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="106" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ш</text>
+  <rect x="137" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="162" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="193" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="218" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Л</text>
+  <rect x="249" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="274" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="305" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="330" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ш</text>
+  <path d="M101 156 Q218 112 335 156" fill="none" stroke="#222222" stroke-width="2" marker-start="url(#arr-k)" marker-end="url(#arr-k)"/>
+  <rect x="445" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="470" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <rect x="501" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="526" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="557" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="582" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">З</text>
+  <rect x="613" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="638" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="669" y="164" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="694" y="199.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <path d="M465 156 Q582 112 699 156" fill="none" stroke="#222222" stroke-width="2" marker-start="url(#arr-k)" marker-end="url(#arr-k)"/>
+  <rect x="81" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="106" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Д</text>
+  <rect x="137" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="162" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <rect x="193" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="218" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Х</text>
+  <rect x="249" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="274" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <rect x="305" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="330" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Д</text>
+  <path d="M101 276 Q218 232 335 276" fill="none" stroke="#222222" stroke-width="2" marker-start="url(#arr-k)" marker-end="url(#arr-k)"/>
+  <rect x="445" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="470" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <rect x="501" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="526" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="557" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="582" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Д</text>
+  <rect x="613" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="638" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <rect x="669" y="284" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="694" y="319.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Р</text>
+  <path d="M465 276 Q582 232 699 276" fill="none" stroke="#222222" stroke-width="2" marker-start="url(#arr-k)" marker-end="url(#arr-k)"/>
+  <rect x="81" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="106" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Л</text>
+  <rect x="137" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="162" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">И</text>
+  <rect x="193" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="218" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <rect x="249" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="274" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <rect x="305" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="330" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Н</text>
+  <rect x="74" y="397" width="288" height="64" rx="8" fill="none" stroke="#E74C3C" stroke-width="5"/>
+  <rect x="445" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="470" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <rect x="501" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="526" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <rect x="557" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="582" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <rect x="613" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="638" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">О</text>
+  <rect x="669" y="404" width="50" height="50" rx="6" fill="#1ABC9C"/>
+  <text x="694" y="439.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">К</text>
+  <path d="M465 396 Q582 352 699 396" fill="none" stroke="#222222" stroke-width="2" marker-start="url(#arr-k)" marker-end="url(#arr-k)"/>
+  <text x="40" y="567" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: ЛИМОН. Все остальные слова — палиндромы: читаются одинаково в обе</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">стороны.</text>
+</svg>

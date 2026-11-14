@@ -1,0 +1,213 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #5d6570;
+  --line: #dfe3e8;
+  --accent: #2563c9;
+  --accent-ink: #ffffff;
+  --ok: #1e8a4c;
+  --shadow: 0 1px 2px rgba(20, 24, 30, 0.06), 0 4px 14px rgba(20, 24, 30, 0.06);
+  --radius: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16181c;
+    --surface: #1f2227;
+    --text: #e8eaed;
+    --muted: #a0a7b1;
+    --line: #2f343b;
+    --accent: #7aa7f0;
+    --accent-ink: #10151d;
+    --ok: #5cc28a;
+    --shadow: none;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 16px 4px;
+}
+
+.top h1 {
+  margin: 0 0 6px;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.top p { margin: 0; color: var(--muted); }
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 56px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-title {
+  padding: 10px 14px 12px;
+  font-weight: 600;
+}
+
+/* --- просмотр задачи --- */
+.viewer {
+  width: min(1000px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.viewer::backdrop { background: rgba(15, 18, 22, 0.6); }
+
+.viewer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 16px;
+}
+
+.viewer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.viewer-bar h2 { margin: 0; font-size: 20px; }
+
+.viewer-img {
+  display: flex;
+  justify-content: center;
+  touch-action: pan-y pinch-zoom;
+}
+
+.viewer-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 230px);
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.viewer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn:hover { border-color: var(--accent); }
+
+.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.btn-icon { min-width: 44px; padding: 8px 12px; }
+
+.btn-main {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-main[aria-expanded="true"] {
+  background: transparent;
+  color: var(--accent);
+}
+
+.answer {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--bg);
+  line-height: 1.45;
+}
+
+.answer strong { color: var(--ok); }
+
+.foot {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .viewer {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+  .viewer-inner { padding: 10px 12px 14px; min-height: 100%; }
+  .viewer-img img { max-height: calc(100dvh - 260px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
+}

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 18</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какой символ следующий?</text>
+  <rect x="98" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="98" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="172" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="172" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="233.5" y="172" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="233.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="233.5" y="234" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="228" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="258" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="277.5" y="172" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="277.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="277.5" y="234" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="302" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="272" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="363.5" y="172" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="363.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="363.5" y="234" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="358" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="358" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="407.5" y="172" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="407.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="407.5" y="234" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="432" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="432" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="493.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="488" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="518" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="488" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="537.5" y="203" width="29" height="10" rx="5" fill="#9B59B6"/>
+  <rect x="532" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="562" y="177.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="562" y="213.5" width="10" height="25" rx="5" fill="#9B59B6"/>
+  <rect x="618" y="167" width="84" height="82" rx="10" fill="#D0D3D8"/>
+  <text x="660" y="225.71" font-family="Inter, Arial, sans-serif" font-size="49.199999999999996" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+  <rect x="135" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <rect x="162.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="162.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="162.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="181.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="158.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="195.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="195.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="195.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="191.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="214.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <text x="190" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="275" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <rect x="302.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="302.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="302.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="298.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="321.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="335.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="335.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="335.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="354.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="331.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <text x="330" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="415" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <rect x="442.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="442.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="442.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="461.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="438.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="461.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="475.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="475.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="475.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="471.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="471.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="494.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <text x="470" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="555" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <rect x="582.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="582.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="582.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="578.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="601.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="615.35" y="438" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="615.35" y="461.5" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="615.35" y="485" width="22.3" height="7" rx="3.5" fill="#9B59B6"/>
+  <rect x="611.5" y="441.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <rect x="634.5" y="468.85" width="7" height="19.3" rx="3.5" fill="#9B59B6"/>
+  <text x="610" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+</svg>

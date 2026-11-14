@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 11</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какое число следующее?</text>
+  <rect x="378" y="112" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="400" y="143.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="352" y="166" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="374" y="197.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="404" y="166" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="426" y="197.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="352" y="220" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="374" y="251.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="404" y="220" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="426" y="251.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="300" y="274" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="322" y="305.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="352" y="274" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="374" y="305.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="404" y="274" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="426" y="305.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="456" y="274" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="478" y="305.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="248" y="328" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="270" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="300" y="328" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="322" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="352" y="328" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="374" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="404" y="328" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="426" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="456" y="328" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="478" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="508" y="328" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="530" y="359.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="248" y="382" width="44" height="44" rx="6" fill="#27AE60"/>
+  <text x="270" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <rect x="300" y="382" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="322" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="352" y="382" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="374" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="404" y="382" width="44" height="44" rx="6" fill="#F39C12"/>
+  <text x="426" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <rect x="456" y="382" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="478" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="508" y="382" width="44" height="44" rx="6" fill="#9AD1F5"/>
+  <text x="530" y="413.36" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="bold" fill="#222222" text-anchor="middle">1</text>
+  <rect x="242" y="376" width="316" height="56" fill="none" stroke="#27AE60" stroke-width="5" rx="4"/>
+  <path d="M250 440 v8 H342 v-8" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="296" y="468" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">три единицы</text>
+  <path d="M354 440 v8 H446 v-8" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="400" y="468" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">две двойки</text>
+  <path d="M458 440 v8 H550 v-8" fill="none" stroke="#222222" stroke-width="2"/>
+  <text x="504" y="468" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="normal" fill="#444444" text-anchor="middle">одна единица</text>
+  <text x="40" y="567" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">Ответ: 312211. Каждая строка «читает вслух» предыдущую: 111221 = три единицы, две</text>
+  <text x="40" y="588" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#27AE60" text-anchor="start">двойки, одна единица.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 21</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Сколько всего квадратов на рисунке?</text>
+  <line x1="256" y1="106" x2="256" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="328" y1="106" x2="328" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="400" y1="106" x2="400" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="472" y1="106" x2="472" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="544" y1="106" x2="544" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="106" x2="544" y2="106" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="178" x2="544" y2="178" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="250" x2="544" y2="250" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="322" x2="544" y2="322" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="394" x2="544" y2="394" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <rect x="65" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="120" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">16</text>
+  <text x="120" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="205" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="260" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">20</text>
+  <text x="260" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="345" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="400" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">25</text>
+  <text x="400" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="485" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="540" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">30</text>
+  <text x="540" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+  <rect x="625" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="680" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">32</text>
+  <text x="680" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">E</text>
+</svg>

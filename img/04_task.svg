@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 4</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Продолжите ряд.</text>
+  <circle cx="400" cy="326" r="195" fill="none" stroke="#E5E7EA" stroke-width="2"/>
+  <circle cx="497.5" cy="157.13" r="30" fill="#F39C12"/>
+  <text x="497.5" y="167.21" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Я</text>
+  <circle cx="568.87" cy="228.5" r="30" fill="#F39C12"/>
+  <text x="568.87" y="238.58" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Ф</text>
+  <circle cx="595" cy="326" r="30" fill="#F39C12"/>
+  <text x="595" y="336.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <circle cx="568.87" cy="423.5" r="30" fill="#F39C12"/>
+  <text x="568.87" y="433.58" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">А</text>
+  <circle cx="497.5" cy="494.87" r="30" fill="#F39C12"/>
+  <text x="497.5" y="504.95" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">М</text>
+  <circle cx="400" cy="521" r="30" fill="#F39C12"/>
+  <text x="400" y="531.08" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">И</text>
+  <circle cx="302.5" cy="494.87" r="30" fill="#F39C12"/>
+  <text x="302.5" y="504.95" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">И</text>
+  <circle cx="231.13" cy="423.5" r="30" fill="#D0D3D8"/>
+  <text x="231.13" y="436.46" font-family="Inter, Arial, sans-serif" font-size="36.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+  <circle cx="205" cy="326" r="28.5" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="3"/>
+  <circle cx="231.13" cy="228.5" r="28.5" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="3"/>
+  <circle cx="302.5" cy="157.13" r="28.5" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="3"/>
+  <circle cx="400" cy="131" r="28.5" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="3"/>
+</svg>

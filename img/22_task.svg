@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 22</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Какая буква следующая?</text>
+  <rect x="50" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="97" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="151" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="198" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">H</text>
+  <rect x="252" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="299" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">I</text>
+  <rect x="353" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="400" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">M</text>
+  <rect x="454" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="501" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">O</text>
+  <rect x="555" y="168" width="94" height="120" rx="10" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="602" y="256.8" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="bold" fill="#222222" text-anchor="middle">T</text>
+  <rect x="656" y="168" width="94" height="120" rx="10" fill="#D0D3D8"/>
+  <text x="703" y="253.92" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+  <rect x="135" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="190" y="488.04" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="bold" fill="#222222" text-anchor="middle">U</text>
+  <text x="190" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="275" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="330" y="488.04" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="bold" fill="#222222" text-anchor="middle">P</text>
+  <text x="330" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="415" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="470" y="488.04" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="bold" fill="#222222" text-anchor="middle">S</text>
+  <text x="470" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="555" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="610" y="488.04" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="bold" fill="#222222" text-anchor="middle">N</text>
+  <text x="610" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+</svg>
