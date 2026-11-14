@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 59</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Все три устройства в равновесии. На третьем — рычаг: левое плечо вдвое длиннее</text>
+  <text x="40" y="104" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">правого. Сколько квадратов уравновесят звезду и круг?</text>
+  <line x1="60" y1="212" x2="220" y2="212" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="140,214 126,242 154,242" fill="#222222"/>
+  <circle cx="62" cy="198" r="12" fill="#E74C3C"/>
+  <circle cx="90" cy="198" r="12" fill="#E74C3C"/>
+  <circle cx="118" cy="198" r="12" fill="#E74C3C"/>
+  <rect x="164" y="186" width="24" height="24" rx="0" fill="#3498DB"/>
+  <rect x="192" y="186" width="24" height="24" rx="0" fill="#3498DB"/>
+  <line x1="320" y1="212" x2="480" y2="212" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="400,214 386,242 414,242" fill="#222222"/>
+  <rect x="324" y="186" width="24" height="24" rx="0" fill="#3498DB"/>
+  <circle cx="364" cy="198" r="12" fill="#E74C3C"/>
+  <polygon points="450,187.5 463,210 437,210" fill="#27AE60"/>
+  <line x1="520" y1="212" x2="700" y2="212" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="640,214 626,242 654,242" fill="#222222"/>
+  <line x1="520" y1="218" x2="520" y2="224" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
+  <line x1="580" y1="218" x2="580" y2="224" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
+  <line x1="640" y1="218" x2="640" y2="224" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
+  <line x1="700" y1="218" x2="700" y2="224" stroke="#222222" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="520,183 523.53,192.15 533.31,192.67 525.71,198.85 528.23,208.33 520,203 511.77,208.33 514.29,198.85 506.69,192.67 516.47,192.15" fill="#F39C12"/>
+  <polygon points="661,187.5 674,210 648,210" fill="#27AE60"/>
+  <polygon points="687,187.5 700,210 674,210" fill="#27AE60"/>
+  <circle cx="713" cy="198" r="12" fill="#E74C3C"/>
+  <circle cx="739" cy="198" r="12" fill="#E74C3C"/>
+  <line x1="320" y1="352" x2="480" y2="352" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="400,354 386,382 414,382" fill="#222222"/>
+  <polygon points="336,323 339.53,332.15 349.31,332.67 341.71,338.85 344.23,348.33 336,343 327.77,348.33 330.29,338.85 322.69,332.67 332.47,332.15" fill="#F39C12"/>
+  <circle cx="364" cy="338" r="12" fill="#E74C3C"/>
+  <text x="430" y="346" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222" text-anchor="middle">? ×</text>
+  <rect x="452" y="326" width="24" height="24" rx="0" fill="#3498DB"/>
+  <rect x="40" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="95" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">2</text>
+  <text x="95" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="162" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="217" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">3</text>
+  <text x="217" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="284" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="339" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">4</text>
+  <text x="339" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="406" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="461" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">5</text>
+  <text x="461" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+  <rect x="528" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="583" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">6</text>
+  <text x="583" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">E</text>
+  <rect x="650" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <text x="705" y="479.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222" text-anchor="middle">7</text>
+  <text x="705" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">F</text>
+</svg>

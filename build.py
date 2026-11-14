@@ -351,8 +351,8 @@ def moser(angles_deg):
 
     nbrs = {v: sorted(adj[v], key=lambda w: ang(v, w)) for v in adj}
     seen, faces = set(), []
-    for u in adj:
-        for v in adj[u]:
+    for u in sorted(adj):
+        for v in sorted(adj[u]):
             if (u, v) in seen:
                 continue
             face, a, b = [], u, v
@@ -2139,7 +2139,7 @@ def task38():
             g = [rect(x0, y0, 88, 88, WHITE, 0, LINE, 1.5)]
             g += [line(x0 + k * c, y0, x0 + k * c, y0 + 88, HIDDEN, 1) for k in (1, 2, 3)]
             g += [line(x0, y0 + k * c, x0 + 88, y0 + k * c, HIDDEN, 1) for k in (1, 2, 3)]
-            g += [tri_cell(x0 + cc * c, y0 + r * c, c, d) for r, cc, d in o]
+            g += [tri_cell(x0 + cc * c, y0 + r * c, c, d) for r, cc, d in sorted(o)]
             if axes:
                 g += [line(x, y0 - 4, x, y0 + 92, GREEN, 2, ' stroke-dasharray="5 4"'),
                       line(x0 - 4, yy, x0 + 92, yy, GREEN, 2, ' stroke-dasharray="5 4"')]
@@ -2498,6 +2498,950 @@ def task44():
 
 
 # =============================================================================
+# Набор 3: задачи 45–60
+# =============================================================================
+def text_lines(cx, cy, lines, size, fill=LINE, weight="bold"):
+    """Несколько строк текста, центрированных по (cx, cy)."""
+    lh = size * 1.2
+    y0 = cy - lh * (len(lines) - 1) / 2
+    return [center_label(cx, y0 + i * lh, ln, size, fill, weight) for i, ln in enumerate(lines)]
+
+
+# --- 45. Одно число в разных системах ------------------------------------------------
+def task45():
+    row1 = ["10", "11", "12", "13", "14", "15", "16", "17"]
+    row2 = ["20", "22", "24", None, "100", "121", "10000"]
+    seq = row1 + row2
+    bases = list(range(16, 1, -1))
+    for s, b in zip(seq, bases):
+        if s:
+            assert int(s, b) == 16, (s, b)
+    missing_base = bases[seq.index(None)]
+    opts = ["25", "30", "33", "31", "40", "26"]
+
+    def val(s, b):
+        try:
+            return int(s, b)
+        except ValueError:
+            return None
+
+    good = [o for o in opts if val(o, missing_base) == 16]
+    assert missing_base == 5 and good == ["31"]
+    ans = "ABCDEF"[opts.index("31")]
+
+    card = Card(45, "Найдите пропущенное число: 10, 11, 12, 13, 14, 15, 16, 17, 20, 22, 24, ?, 100, 121, 10000.")
+    t_els, s_els = [], []
+    for row, y, n in ((row1, card.body_top + 50, 8), (row2, card.body_top + 150, 7)):
+        for i, s in enumerate(row):
+            x = 30 + i * 92
+            if s is None:
+                t_els += [rect(x, y, 80, 60, HIDDEN, 8), center_label(x + 40, y + 30, "?", 36)]
+                s_els += [rect(x, y, 80, 60, WHITE, 8, BLUE, 2), center_label(x + 40, y + 30, "31", 26, GREEN),
+                          green_frame(x, y, 80, 60, 3)]
+                continue
+            els = [rect(x, y, 80, 60, WHITE, 8, BLUE, 2), center_label(x + 40, y + 30, s, 22 if len(s) > 4 else 26, LINE)]
+            t_els += els
+            s_els += els
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, o, 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 31. Это число 16, записанное в системах с основаниями 16, 15, 14 … 2; "
+                      "в пятеричной 16 = 31.", ans)
+    save(45, task, sol)
+    return "D (31)"
+
+
+# --- 46. Брайль + Фибоначчи ------------------------------------------------------------
+BRAILLE = {1: {1}, 2: {1, 2}, 3: {1, 4}, 4: {1, 4, 5}, 5: {1, 5}, 6: {1, 2, 4},
+           7: {1, 2, 4, 5}, 8: {1, 2, 5}, 9: {2, 4}, 0: {2, 4, 5}}
+
+
+def braille_cell(x, y, dots, raised=LINE, empty=HIDDEN):
+    els = []
+    for d in range(1, 7):
+        cx = x + (10 if d <= 3 else 24)
+        cy = y + [10, 25, 40][(d - 1) % 3]
+        on = d in dots
+        els.append(f'<circle cx="{cx}" cy="{f(cy)}" r="{6 if on else 3}" fill="{raised if on else empty}"/>')
+    return els
+
+
+def braille_number(x, y, n, raised=LINE):
+    els = []
+    for k, ch in enumerate(str(n)):
+        els += braille_cell(x + k * 40, y, BRAILLE[int(ch)], raised)
+    return els
+
+
+def task46():
+    fib = [1, 1]
+    while len(fib) < 10:
+        fib.append(fib[-1] + fib[-2])
+    assert fib[:9] == [1, 1, 2, 3, 5, 8, 13, 21, 34]
+    decode = {frozenset(v): k for k, v in BRAILLE.items()}
+    opts = [(4, 5), (5, 2), (8, 9), (3, 5), (5, 5), (6, 6)]
+    vals = [int("".join(str(decode[frozenset(BRAILLE[d])]) for d in o)) for o in opts]
+    assert vals.count(fib[9]) == 1
+    ans = "ABCDEF"[vals.index(fib[9])]
+    assert ans == "E"
+
+    card = Card(46, "Каждая плитка — число, записанное рельефно-точечным шрифтом (знак числа опущен). "
+                    "Подсказка показывает 1–5. Какое число следует дальше?")
+    xs = [25, 85, 145, 205, 265, 325, 385, 485, 585, 685]
+    y = card.body_top + 40
+    t_els, s_els = [], []
+    for i, x in enumerate(xs):
+        n = fib[i] if i < 9 else None
+        w = 50 if (n is not None and n < 10) else 90
+        if n is None:
+            t_els += [rect(x, y, 90, 70, HIDDEN, 8), center_label(x + 45, y + 35, "?", 40)]
+            s_els += [rect(x, y, 90, 70, WHITE, 8, PURPLE, 2), *braille_number(x + 8, y + 10, 55, GREEN),
+                      green_frame(x, y, 90, 70, 3)]
+            continue
+        els = [rect(x, y, w, 70, WHITE, 8, PURPLE, 2), *braille_number(x + 8, y + 10, n)]
+        t_els += els
+        s_els += els
+    hy = y + 110
+    hint = [text(200, hy + 30, "Подсказка:", 18, TEXT)]
+    for d in range(1, 6):
+        hx = 300 + (d - 1) * 50
+        hint += [rect(hx - 2, hy - 2, 38, 54, "none", 4, HIDDEN, 1), *braille_cell(hx, hy, BRAILLE[d]),
+                 text(hx + 17, hy + 72, str(d), 16, TEXT, "bold", "middle")]
+    t_els += hint
+    s_els += hint
+    card.add_options([lambda cx, cy, s, o=o: braille_cell(cx - 37, cy - 25, BRAILLE[o[0]]) +
+                      braille_cell(cx + 3, cy - 25, BRAILLE[o[1]]) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: E — 55. Шрифт Брайля: 1, 1, 2, 3, 5, 8, 13, 21, 34 — это числа Фибоначчи, "
+                      "дальше 55.", ans)
+    save(46, task, sol)
+    return "E (55)"
+
+
+# --- 47. Коллатц -------------------------------------------------------------------------
+def collatz(n):
+    seq = [n]
+    while seq[-1] != 1:
+        x = seq[-1]
+        seq.append(x // 2 if x % 2 == 0 else 3 * x + 1)
+    return seq
+
+
+def task47():
+    seq = collatz(7)
+    assert seq[:9] == [7, 22, 11, 34, 17, 52, 26, 13, 40] and len(seq) - 1 == 16
+    shown = [7, 22, 11, 34, None, 52, None, 13, 40]
+    hidden = (seq[4], seq[6])
+    opts = [(17, 39), (43, 26), (68, 26), (17, 26), (17, 104), (12, 26)]
+    ans = "ABCDEF"[opts.index(hidden)]
+    assert ans == "D" and opts.count(hidden) == 1
+
+    card = Card(47, "Цепочка чисел подчиняется одному простому правилу. Какие числа скрыты?")
+    cy = card.body_top + 150
+    t_els, s_els = [], []
+    for i, v in enumerate(shown):
+        cx = 55 + i * 86
+        if i:
+            a = line(cx - 86 + 34, cy, cx - 36, cy, LINE, 2, ' marker-end="url(#arr-k)"')
+            t_els.append(a)
+            s_els.append(a)
+        if v is None:
+            t_els += [f'<circle cx="{cx}" cy="{f(cy)}" r="30" fill="{HIDDEN}"/>', center_label(cx, cy, "?", 36)]
+            s_els += [f'<circle cx="{cx}" cy="{f(cy)}" r="30" fill="{WHITE}" stroke="{GREEN}" stroke-width="5"/>',
+                      center_label(cx, cy, str(seq[i]), 22, GREEN)]
+        else:
+            els = [f'<circle cx="{cx}" cy="{f(cy)}" r="30" fill="{WHITE}" stroke="{TEAL}" stroke-width="3"/>',
+                   center_label(cx, cy, str(v), 22, LINE)]
+            t_els += els
+            s_els += els
+    card.add_options([lambda x, y, s, o=o: text_lines(x, y, [str(o[0]), f"и {o[1]}"], 22) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 17 и 26. Чётное — делим на 2, нечётное — умножаем на 3 и прибавляем 1 "
+                      "(гипотеза Коллатца).", ans)
+    save(47, task, sol)
+    return "D (17 и 26)"
+
+
+# --- 48. Фибоначчи по цифровому корню -----------------------------------------------------
+def task48():
+    dr = lambda x: 1 + (x - 1) % 9
+    a = [1, 1]
+    while len(a) < 16:
+        a.append(dr(a[-1] + a[-2]))
+    assert a == [1, 1, 2, 3, 5, 8, 4, 3, 7, 1, 8, 9, 8, 8, 7, 6]
+    opts = [15, 5, 3, 6, 1, 9]
+    ans = "ABCDEF"[opts.index(a[15])]
+    assert ans == "D"
+    card = Card(48, "Ряд начинается как знакомая последовательность, но потом «ломается». Найдите правило "
+                    "и следующее число.")
+    t_els, s_els = [], []
+    for k, v in enumerate(a):
+        x, y = 30 + (k % 8) * 92, card.body_top + 50 + (k // 8) * 100
+        if k == 15:
+            t_els += [rect(x, y, 80, 70, HIDDEN, 8), center_label(x + 40, y + 35, "?", 42)]
+            s_els += [rect(x, y, 80, 70, WHITE, 8, ORANGE, 2), center_label(x + 40, y + 35, str(v), 30, GREEN),
+                      green_frame(x, y, 80, 70, 3)]
+            continue
+        els = [rect(x, y, 80, 70, WHITE, 8, ORANGE, 2), center_label(x + 40, y + 35, str(v), 30, LINE)]
+        t_els += els
+        s_els += els
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, str(o), 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 6. Каждое число — сумма двух предыдущих, сведённая к одной цифре: "
+                      "8 + 7 = 15 → 1 + 5 = 6.", ans)
+    save(48, task, sol)
+    return "D (6)"
+
+
+# --- 49. Замощения домино -------------------------------------------------------------------
+def tilings(n):
+    """Все замощения полосы 2×n: строка из V (вертикальная) и H (пара горизонтальных)."""
+    if n == 0:
+        return [""]
+    if n == 1:
+        return ["V"]
+    return ["V" + t for t in tilings(n - 1)] + ["H" + t for t in tilings(n - 2)]
+
+
+def draw_tiling(x, y, t, c=24):
+    els, cx = [], x
+    for p in t:
+        if p == "V":
+            els.append(rect(cx, y, c, 2 * c, BLUE, 0, WHITE, 2))
+            cx += c
+        else:
+            els += [rect(cx, y, 2 * c, c, ORANGE, 0, WHITE, 2), rect(cx, y + c, 2 * c, c, ORANGE, 0, WHITE, 2)]
+            cx += 2 * c
+    els.append(rect(x, y, cx - x, 2 * c, "none", 0, LINE, 2))
+    return els
+
+
+def task49():
+    T = {1: 1, 2: 2}
+    for n in range(3, 9):
+        T[n] = T[n - 1] + T[n - 2]
+    assert T[8] == 34 == len(tilings(8)) and [len(tilings(n)) for n in (1, 2, 3)] == [1, 2, 3]
+    opts = [21, 28, 36, 55, 64, 34]
+    ans = "ABCDEF"[opts.index(T[8])]
+    card = Card(49, "Полосу 2×1 можно замостить доминошками 1×2 одним способом, 2×2 — двумя, 2×3 — тремя "
+                    "(все способы нарисованы). Сколькими способами можно замостить полосу 2×8?")
+    y = card.body_top + 30
+    base = draw_tiling(30, y, "V")
+    for x, t in zip((110, 168), ("VV", "H")):
+        base += draw_tiling(x, y, t)
+    for x, t in zip((270, 352, 434), ("VVV", "VH", "HV")):
+        base += draw_tiling(x, y, t)
+    for cx, lab in ((42, "1"), (163, "2"), (388, "3")):
+        base.append(text(cx, y + 76, lab, 18, TITLE, "bold", "middle"))
+    sy = y + 120
+    base.append(text(240, sy + 30, "2×8", 20, TITLE, "bold", "end"))
+    t_els = base + [rect(260, sy, 192, 48, HIDDEN, 0, LINE, 2), center_label(356, sy + 24, "?", 30)]
+    s_els = base + [rect(260, sy, 192, 48, WHITE, 0, LINE, 2), center_label(356, sy + 24, "34", 28, GREEN),
+                    green_frame(260, sy, 192, 48, 3)]
+    card.add_options([lambda x, y_, s, o=o: [center_label(x, y_, str(o), 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: F — 34. 1, 2, 3, 5, 8, 13, 21, 34: крайний столбец закрывает либо одна вертикальная "
+                      "доминошка, либо пара горизонтальных.", ans)
+    save(49, task, sol)
+    return "F (34)"
+
+
+# --- 50. Треугольник Паскаля по модулю 3 -------------------------------------------------------
+def task50():
+    rows = [[math.comb(n, k) % 3 for k in range(n + 1)] for n in range(8)]
+    code = {"C": 1, "K": 2, "G": 0}
+    given = ["C", "CC", "CKC", "CGGC", "CCGCC", "CKCCKC", "CGGKGGC"]
+    assert [[code[ch] for ch in r] for r in given] == rows[:7]
+    assert rows[7] == [1, 1, 0, 2, 2, 0, 1, 1]
+    opts = ["CKGKKGKC", "CCGCCGCC", "CCGKKGCC", "CGCKKCGC", "CCKGGKCC", "KCGKKGCK"]
+    match = [i for i, o in enumerate(opts) if [code[ch] for ch in o] == rows[7]]
+    assert match == [2]
+    ans = "ABCDEF"[match[0]]
+    col = {1: BLUE, 2: RED, 0: HIDDEN}
+
+    card = Card(50, "Цвет каждого кружка определяется двумя кружками над ним (крайние всегда синие). "
+                    "Каким будет следующий ряд?")
+    t_els, s_els = [], []
+    for k in range(8):
+        y = card.body_top + 26 + 30 * k
+        for i in range(k + 1):
+            x = 400 + (i - k / 2) * 32
+            if k == 7:
+                t_els += [f'<circle cx="{f(x)}" cy="{f(y)}" r="13" fill="{WHITE}" stroke="{LINE}" stroke-width="2"/>',
+                          center_label(x, y, "?", 14, LINE)]
+                s_els.append(f'<circle cx="{f(x)}" cy="{f(y)}" r="13" fill="{col[rows[7][i]]}"/>')
+            else:
+                el = f'<circle cx="{f(x)}" cy="{f(y)}" r="13" fill="{col[rows[k][i]]}"/>'
+                t_els.append(el)
+                s_els.append(el)
+    y7 = card.body_top + 26 + 210
+    s_els.append(green_frame(400 - 3.5 * 32 - 15, y7 - 15, 7 * 32 + 30, 30, 3))
+    card.add_options([lambda cx, cy, s, o=o: [f'<circle cx="{f(cx - 55 + 9 + 13 * i)}" cy="{f(cy)}" r="5.5" '
+                                              f'fill="{col[code[ch]]}"/>' for i, ch in enumerate(o)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: C. Синий = 1, красный = 2, серый = 0; кружок = сумма двух верхних по модулю 3 "
+                      "(треугольник Паскаля mod 3).", ans)
+    save(50, task, sol)
+    return "C"
+
+
+# --- 51. Муравей Лэнгтона ----------------------------------------------------------------------
+DIRS = "URDL"
+STEP = {"U": (-1, 0), "R": (0, 1), "D": (1, 0), "L": (0, -1)}
+
+
+def langton(steps, start=(2, 2), d="U"):
+    black, pos = set(), start
+    for _ in range(steps):
+        turn = -1 if pos in black else 1         # белая — направо, чёрная — налево
+        d = DIRS[(DIRS.index(d) + turn) % 4]
+        black ^= {pos}
+        pos = (pos[0] + STEP[d][0], pos[1] + STEP[d][1])
+    return black, pos, d
+
+
+def ant_tri(x, y, c, d):
+    i = c * 6 / 36
+    a, b, m = i, c - i, c / 2
+    pts = {"U": [(x + m, y + a), (x + b, y + b), (x + a, y + b)], "D": [(x + m, y + b), (x + b, y + a), (x + a, y + a)],
+           "L": [(x + a, y + m), (x + b, y + a), (x + b, y + b)], "R": [(x + b, y + m), (x + a, y + a), (x + a, y + b)]}
+    return polygon(pts[d], RED)
+
+
+def field(x0, y0, c, n, black, ant=None, live=LINE, grid=LINE, frame=None):
+    els = [rect(x0, y0, n * c, n * c, WHITE)]
+    els += [rect(x0 + cc * c, y0 + r * c, c, c, live) for r, cc in sorted(black)]
+    els += [line(x0 + k * c, y0, x0 + k * c, y0 + n * c, grid, 1) for k in range(n + 1)]
+    els += [line(x0, y0 + k * c, x0 + n * c, y0 + k * c, grid, 1) for k in range(n + 1)]
+    if frame:
+        els.append(rect(x0, y0, n * c, n * c, "none", 0, frame, 2))
+    if ant:
+        els.append(ant_tri(x0 + ant[1] * c, y0 + ant[0] * c, c, ant[2]))
+    return els
+
+
+def parse_rows(rows, first=1):
+    black, ant = set(), None
+    for r, s in enumerate(rows, first):
+        for c, ch in enumerate(s):
+            if ch == "#":
+                black.add((r, c))
+            elif ch == "a":
+                ant = (r, c)
+    return black, ant
+
+
+def task51():
+    b4, p4, d4 = langton(4)
+    assert b4 == {(2, 2), (2, 3), (3, 2), (3, 3)} and p4 == (2, 2) and d4 == "U"
+    b10, p10, d10 = langton(10)
+    A = parse_rows([".##..", "..##.", ".a##."])
+    Bm = parse_rows(["..##.", ".##..", ".##a."])
+    C = parse_rows([".##..", ".#a#.", "..##."])
+    E = parse_rows([".##..", ".###.", "..##."])
+    opts = [(A[0], A[1], "D"), (Bm[0], Bm[1], "D"), (C[0], C[1], "D"), (A[0], A[1], "L"),
+            (E[0], (2, 1), "L"), (A[0] | {(2, 1)}, A[1], "D")]
+    match = [i for i, (bl, p, d) in enumerate(opts) if (bl, p, d) == (b10, p10, d10)]
+    assert match == [0]
+    assert (opts[2][0], opts[2][1], opts[2][2]) == langton(8)
+    assert (opts[4][0], opts[4][1], opts[4][2]) == langton(9)
+    ans = "A"
+
+    card = Card(51, "Муравей на белой клетке поворачивает на 90° направо, на чёрной — налево. Затем он "
+                    "перекрашивает клетку в противоположный цвет и шагает на клетку вперёд. Показаны шаг 0 "
+                    "и шаг 4. Каким будет поле после 10 шагов?")
+    y = card.body_top + 32
+    base = [text(150, y - 10, "шаг 0", 16, TEXT, "normal", "middle"), text(400, y - 10, "шаг 4", 16, TEXT, "normal", "middle"),
+            text(650, y - 10, "шаг 10", 16, TEXT, "normal", "middle")]
+    base += field(60, y, 36, 5, set(), (2, 2, "U"))
+    base += field(310, y, 36, 5, b4, (*p4, d4))
+    t_els = base + [rect(560, y, 180, 180, HIDDEN), center_label(650, y + 90, "?", 90)]
+    s_els = base + field(560, y, 36, 5, b10, (*p10, d10)) + [green_frame(560, y, 180, 180, 3)]
+    card.add_options([lambda cx, cy, s, o=o: field(cx - 45, cy - 45, 18, 5, o[0], (*o[1], o[2])) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A. Шаги 5–10: на чёрной клетке поворот налево, затем три поворота направо на белых, "
+                      "направо и снова налево.", ans)
+    save(51, task, sol)
+    return "A"
+
+
+# --- 52. Жизнь ------------------------------------------------------------------------------------
+def life_step(cells, n=6):
+    out = set()
+    for r in range(n):
+        for c in range(n):
+            k = sum((r + dr, c + dc) in cells for dr in (-1, 0, 1) for dc in (-1, 0, 1) if dr or dc)
+            if k == 3 or (k == 2 and (r, c) in cells):
+                out.add((r, c))
+    return out
+
+
+def task52():
+    g0 = {(2, 1), (2, 2), (2, 3), (3, 2)}
+    g1 = life_step(g0)
+    assert g1 == {(1, 2), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)}
+    g2 = life_step(g1)
+    rows = {"A": ["..#...", ".###..", ".###..", "......"], "B": ["..#...", ".#.#..", "......", ".###.."],
+            "C": ["..#...", "......", ".#.#..", "......"], "D": [".###..", "......", ".#.#..", "..#..."],
+            "E": [".###..", "..#...", ".#.#..", "..#..."], "F": [".###..", "......", ".#.#..", "......"]}
+    opts = [parse_rows(rows[k])[0] for k in "ABCDEF"]
+    match = [i for i, o in enumerate(opts) if o == g2]
+    assert match == [3]
+    ans = "D"
+    card = Card(52, "Живая клетка выживает, если у неё 2 или 3 живых соседа (из 8), иначе умирает. Пустая "
+                    "клетка оживает, если соседей ровно 3. Показаны поколения 0 и 1. Каким будет поколение 2?")
+    y = card.body_top + 32
+    base = [text(150, y - 10, "поколение 0", 16, TEXT, "normal", "middle"),
+            text(400, y - 10, "поколение 1", 16, TEXT, "normal", "middle"),
+            text(650, y - 10, "поколение 2", 16, TEXT, "normal", "middle")]
+    base += field(60, y, 30, 6, g0, live=GREEN, grid=HIDDEN, frame=LINE)
+    base += field(310, y, 30, 6, g1, live=GREEN, grid=HIDDEN, frame=LINE)
+    t_els = base + [rect(560, y, 180, 180, HIDDEN), rect(560, y, 180, 180, "none", 0, LINE, 2),
+                    center_label(650, y + 90, "?", 90)]
+    s_els = base + field(560, y, 30, 6, g2, live=GREEN, grid=HIDDEN, frame=LINE) + [green_frame(560, y, 180, 180, 4)]
+    card.add_options([lambda cx, cy, s, o=o: field(cx - 45, cy - 45, 15, 6, o, live=GREEN, grid=HIDDEN, frame=LINE)
+                      for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D. Выживают верх и два нижних угла, рождаются 3 клетки; центр и середины сторон "
+                      "гибнут от тесноты.", ans)
+    save(52, task, sol)
+    return "D"
+
+
+# --- 53. Ханойская башня -------------------------------------------------------------------------
+def hanoi_moves(n, a=0, c=2, b=1):
+    if n == 0:
+        return []
+    return hanoi_moves(n - 1, a, b, c) + [(a, c)] + hanoi_moves(n - 1, b, c, a)
+
+
+def hanoi_state(k):
+    rods = [[4, 3, 2, 1], [], []]
+    for a, c in hanoi_moves(4)[:k]:
+        rods[c].append(rods[a].pop())
+    return rods
+
+
+DISK_COL = {1: YELLOW, 2: GREEN, 3: BLUE, 4: PURPLE}
+
+
+def hanoi_panel(x0, base_y, rods, rod_xs, rod_h, disk_h, widths, base_w, rod_w=6, rx=4):
+    els = [rect(x0 + (rod_xs[0] + rod_xs[2]) / 2 - base_w / 2, base_y, base_w, disk_h * 0.4, LINE, 2)]
+    for rx_ in rod_xs:
+        els.append(rect(x0 + rx_ - rod_w / 2, base_y - rod_h, rod_w, rod_h, LINE, 2))
+    for rx_, rod in zip(rod_xs, rods):
+        for k, d in enumerate(rod):
+            w = widths[d]
+            els.append(rect(x0 + rx_ - w / 2, base_y - (k + 1) * disk_h, w, disk_h, DISK_COL[d], rx))
+    return els
+
+
+def task53():
+    moves = hanoi_moves(4)
+    assert len(moves) == 15
+    assert hanoi_state(4) == [[4], [3], [2, 1]]
+    target = hanoi_state(10)
+    opts = [[[2, 1], [3], [4]], [[], [3, 2], [4, 1]], [[2], [3, 1], [4]],
+            [[3], [2], [4, 1]], [[2], [3], [4, 1]], [[1], [3], [4, 2]]]
+    assert [o == target for o in opts].count(True) == 1
+    ans = "ABCDEF"[opts.index(target)]
+    assert ans == "E" and opts[0] == hanoi_state(11) and opts[1] == hanoi_state(9)
+
+    card = Card(53, "Башню из 4 дисков переносят с левого стержня на правый за минимальное число ходов (15). "
+                    "Показаны положения до начала и после 4-го хода. Как стоят диски после 10-го хода?")
+    by = card.body_top + 210
+    big = {1: 30, 2: 44, 3: 58, 4: 72}
+    xs = (40, 115, 190)
+    base = []
+    for x0, lab in zip((30, 285, 540), ("ход 0", "ход 4", "ход 10")):
+        base.append(text(x0 + 115, card.body_top + 24, lab, 16, TEXT, "normal", "middle"))
+    base += hanoi_panel(30, by, hanoi_state(0), xs, 140, 20, big, 220)
+    base += hanoi_panel(285, by, hanoi_state(4), xs, 140, 20, big, 220)
+    t_els = base + hanoi_panel(540, by, [[], [], []], xs, 140, 20, big, 220) + \
+        hidden_box(655, by - 80, 70, 70, size=48)
+    s_els = base + hanoi_panel(540, by, target, xs, 140, 20, big, 220) + [green_frame(540, by - 150, 230, 160, 3)]
+    small = {1: 12, 2: 18, 3: 24, 4: 30}
+    card.add_options([lambda cx, cy, s, o=o: hanoi_panel(cx - 55, cy + 30, o, (18, 55, 92), 56, 8, small, 104, 3, 2)
+                      for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: E. Ход 8 — большой диск на правый стержень; ход 9 — маленький со среднего на правый; "
+                      "ход 10 — второй диск со среднего на левый.", ans)
+    save(53, task, sol)
+    return "E"
+
+
+# --- 54. Одним росчерком --------------------------------------------------------------------------
+def odd_vertex_count(segs, circles=()):
+    eps = 1e-6
+    pts = []
+
+    def add(p):
+        if not any(math.dist(p, q) < 1e-4 for q in pts):
+            pts.append(p)
+
+    for a, b in segs:
+        add(a)
+        add(b)
+    for (a, b), (c, d) in combinations(segs, 2):
+        hit = _seg_intersect(a, b, c, d)
+        if hit:
+            add(hit[0])
+    for (c1, r1), (c2, r2) in combinations(circles, 2):
+        dd = math.dist(c1, c2)
+        if abs(r1 - r2) < dd < r1 + r2:
+            aa = (r1 * r1 - r2 * r2 + dd * dd) / (2 * dd)
+            h = math.sqrt(r1 * r1 - aa * aa)
+            mx, my = c1[0] + aa * (c2[0] - c1[0]) / dd, c1[1] + aa * (c2[1] - c1[1]) / dd
+            add((mx + h * (c2[1] - c1[1]) / dd, my - h * (c2[0] - c1[0]) / dd))
+            add((mx - h * (c2[1] - c1[1]) / dd, my + h * (c2[0] - c1[0]) / dd))
+    for (a, b) in segs:
+        for (c, r) in circles:
+            dx, dy = b[0] - a[0], b[1] - a[1]
+            fx, fy = a[0] - c[0], a[1] - c[1]
+            A_, B_, C_ = dx * dx + dy * dy, 2 * (fx * dx + fy * dy), fx * fx + fy * fy - r * r
+            disc = B_ * B_ - 4 * A_ * C_
+            if disc >= 0:
+                for sgn in (-1, 1):
+                    t = (-B_ + sgn * math.sqrt(disc)) / (2 * A_)
+                    if -eps <= t <= 1 + eps:
+                        add((a[0] + t * dx, a[1] + t * dy))
+
+    def deg(p):
+        d = 0
+        for a, b in segs:
+            if math.dist(p, a) < 1e-4 or math.dist(p, b) < 1e-4:
+                d += 1
+            elif abs(math.dist(a, p) + math.dist(p, b) - math.dist(a, b)) < 1e-6:
+                d += 2
+        d += sum(2 for c, r in circles if abs(math.dist(p, c) - r) < 1e-4)
+        return d
+
+    return sum(deg(p) % 2 for p in pts)
+
+
+def figure54(kind):
+    """Варианты в координатах рамки 110×110: (отрезки, окружности)."""
+    if kind == "A":
+        v = [(55 + 42 * math.cos(math.radians(-90 + 72 * k)), 57 + 42 * math.sin(math.radians(-90 + 72 * k))) for k in range(5)]
+        return [(v[k], v[(k + 1) % 5]) for k in range(5)] + [(v[k], v[(k + 2) % 5]) for k in range(5)], []
+    if kind == "B":
+        return [((15, 55), (95, 55))], [((55, 55), 40)]
+    if kind == "C":
+        sq = [(20, 20), (90, 20), (90, 90), (20, 90)]
+        return [(sq[k], sq[(k + 1) % 4]) for k in range(4)] + [((20, 20), (90, 90))], []
+    if kind == "D":
+        return [], [((25, 55), 18), ((55, 55), 18), ((85, 55), 18)]
+    if kind == "E":
+        sq = [(20, 20), (90, 20), (90, 90), (20, 90)]
+        return [(sq[k], sq[(k + 1) % 4]) for k in range(4)] + [((55, 20), (55, 90)), ((20, 55), (90, 55))], []
+    rh = [(55, 15), (95, 55), (55, 95), (15, 55)]
+    return [(rh[k], rh[(k + 1) % 4]) for k in range(4)], [((55, 55), 40)]
+
+
+def task54():
+    house_pts = {"a": (340, 360), "b": (460, 360), "c": (340, 240), "d": (460, 240), "e": (400, 170)}
+    house = [("a", "b"), ("a", "c"), ("b", "d"), ("c", "d"), ("a", "d"), ("b", "c"), ("c", "e"), ("d", "e")]
+    route = ["a", "b", "c", "e", "d", "c", "a", "d", "b"]
+    assert sorted(tuple(sorted(e)) for e in zip(route, route[1:])) == sorted(tuple(sorted(e)) for e in house)
+    hs = [(house_pts[a], house_pts[b]) for a, b in house]
+    assert odd_vertex_count(hs) == 2
+    odd = {k: odd_vertex_count(*figure54(k)) for k in "ABCDEF"}
+    assert odd == {"A": 0, "B": 2, "C": 2, "D": 0, "E": 4, "F": 0}, odd
+    ans = "E"
+
+    card = Card(54, "Домик рисуется одним росчерком, не отрывая ручки и не проводя линию дважды. "
+                    "Какую из шести фигур так нарисовать НЕЛЬЗЯ?")
+    dy = -10
+    els = [line(a[0], a[1] + dy, b[0], b[1] + dy, LINE, 3) for a, b in hs]
+    for k, (p, q) in enumerate(zip(route, route[1:]), 1):
+        (x1, y1), (x2, y2) = house_pts[p], house_pts[q]
+        els.append(line(x1, y1 + dy, x2, y2 + dy, GREEN, 2))
+        t = {2: 0.28, 7: 0.72}.get(k, 0.5)  # диагонали пересекаются в центре — номера разводим
+        mx, my = x1 + t * (x2 - x1), y1 + t * (y2 - y1) + dy
+        els += [f'<circle cx="{f(mx)}" cy="{f(my)}" r="9" fill="{WHITE}" stroke="{GREEN}" stroke-width="1.5"/>',
+                center_label(mx, my, str(k), 12, GREEN)]
+
+    def opt(kind, mark=False):
+        def draw(cx, cy, s):
+            ox, oy = cx - 55, cy - 55
+            segs, circles = figure54(kind)
+            g = [line(ox + a[0], oy + a[1], ox + b[0], oy + b[1], LINE, 2.5) for a, b in segs]
+            g += [f'<circle cx="{f(ox + c[0])}" cy="{f(oy + c[1])}" r="{r}" fill="none" stroke="{LINE}" stroke-width="2.5"/>'
+                  for c, r in circles]
+            if mark:
+                g += [f'<circle cx="{f(ox + x)}" cy="{f(oy + y)}" r="5" fill="{RED}"/>'
+                      for x, y in ((55, 20), (90, 55), (55, 90), (20, 55))]
+            return g
+        return draw
+
+    card.add_options([opt(k) for k in "ABCDEF"])
+    card.body = els
+    task = card.render()
+    card.options = []
+    card.add_options([opt(k, k == ans) for k in "ABCDEF"])
+    sol = card.render("Ответ: E. Нечётных узлов (степень 3) у «окошка» четыре — больше двух, значит, "
+                      "одним росчерком нельзя.", ans)
+    save(54, task, sol)
+    return "E (окошко)"
+
+
+# --- 55. Вид спереди и справа ----------------------------------------------------------------------
+def column(x, base, h, c=40):
+    return [rect(x, base - (k + 1) * c, c, c, BLUE, 0, WHITE, 2) for k in range(h)]
+
+
+def task55():
+    front = [3, 1, 2]                      # столбцы слева направо
+    side = {"перед": 1, "середина": 3, "зад": 2}
+    plan = {r: [min(front[c], side[r]) for c in range(3)] for r in side}
+    assert plan == {"зад": [2, 1, 2], "середина": [3, 1, 2], "перед": [1, 1, 1]}
+    assert [max(plan[r][c] for r in side) for c in range(3)] == front
+    assert all(max(plan[r]) == side[r] for r in side)
+    total = sum(map(sum, plan.values()))
+    assert total == 14
+    opts = [6, 9, 12, 14, 15, 18]
+    ans = "ABCDEF"[opts.index(total)]
+
+    card = Card(55, "На поле 3×3 стоят башенки из одинаковых кубиков (без пустот). Виды спереди и справа "
+                    "показаны. Какое наибольшее число кубиков может быть в постройке?")
+    top = card.body_top + 22
+    base_y = top + 190
+    els = [text(120, top, "Вид спереди", 16, TITLE, "bold"), text(330, top, "Вид справа", 16, TITLE, "bold"),
+           text(560, top, "Вид сверху: поле 3×3", 16, TITLE, "bold")]
+    for k, h in enumerate(front):
+        els += column(120 + k * 40, base_y, h)
+    els.append(line(110, base_y, 250, base_y, LINE, 2))
+    for k, h in enumerate([side["перед"], side["середина"], side["зад"]]):
+        els += column(330 + k * 40, base_y, h)
+    els += [line(320, base_y, 460, base_y, LINE, 2), text(350, base_y + 20, "перед", 14, TEXT, "normal", "middle"),
+            text(430, base_y + 20, "зад", 14, TEXT, "normal", "middle")]
+    gx, gy = 560, top + 50
+    grid = [rect(gx + c * 40, gy + r * 40, 40, 40, HIDDEN, 0, WHITE, 2) for r in range(3) for c in range(3)]
+    els += grid + [text(gx + 60, gy - 8, "зад", 14, TEXT, "normal", "middle"),
+                   text(gx + 60, gy + 136, "перед", 14, TEXT, "normal", "middle")]
+    t_els = els + [center_label(gx + 60, gy + 60, "?", 40)]
+    s_els = list(els)
+    for r, name in enumerate(["зад", "середина", "перед"]):
+        for c in range(3):
+            s_els.append(center_label(gx + c * 40 + 20, gy + r * 40 + 20, str(plan[name][c]), 22, GREEN))
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, str(o), 40, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 14. В каждой клетке — меньшее из высот её столбца (спереди) и ряда (справа): "
+                      "5 + 6 + 3 = 14.", ans)
+    save(55, task, sol)
+    return "D (14)"
+
+
+# --- 56. Небоскрёбы 4×4 ---------------------------------------------------------------------------
+def visible(seq):
+    m, k = 0, 0
+    for h in seq:
+        if h > m:
+            m, k = h, k + 1
+    return k
+
+
+def task56():
+    import itertools
+    perms = list(itertools.permutations(range(1, 5)))
+    clues = {("top", 1): 1, ("top", 3): 3, ("left", 1): 2, ("left", 3): 1,
+             ("right", 2): 1, ("right", 3): 2, ("bottom", 2): 3}  # индексы с нуля
+
+    def ok(g):
+        cols = list(zip(*g))
+        for (side, i), v in clues.items():
+            seq = {"top": cols[i], "bottom": cols[i][::-1], "left": g[i], "right": g[i][::-1]}[side]
+            if visible(seq) != v:
+                return False
+        return True
+
+    sols = []
+    for r1 in perms:
+        for r2 in perms:
+            if any(a == b for a, b in zip(r1, r2)):
+                continue
+            for r3 in perms:
+                if any(len({a, b, c}) < 3 for a, b, c in zip(r1, r2, r3)):
+                    continue
+                r4 = tuple(10 - a - b - c for a, b, c in zip(r1, r2, r3))
+                if sorted(r4) != [1, 2, 3, 4]:
+                    continue
+                if ok((r1, r2, r3, r4)):
+                    sols.append((r1, r2, r3, r4))
+    assert sols == [((2, 4, 3, 1), (3, 1, 4, 2), (1, 3, 2, 4), (4, 2, 1, 3))]
+    sol_g = sols[0]
+    opts = ["3124", "1324", "1234", "2314", "1342", "3214"]
+    ans = "ABCDEF"[opts.index("".join(map(str, sol_g[2])))]
+    assert ans == "B"
+
+    card = Card(56, "В каждую клетку поставьте дом высотой 1–4 так, чтобы в каждой строке и каждом столбце "
+                    "высоты не повторялись. Число у края — сколько домов видно с этой стороны (высокий дом "
+                    "закрывает низкие за ним). Какой будет выделенная строка?")
+    c = 46
+    gx, gy = 308, card.body_top + 30
+    els = [rect(gx, gy + 2 * c, 4 * c, c, YELLOW, 0, extra=' opacity="0.25"')]
+    els += [line(gx + k * c, gy, gx + k * c, gy + 4 * c, LINE, 2) for k in range(5)]
+    els += [line(gx, gy + k * c, gx + 4 * c, gy + k * c, LINE, 2) for k in range(5)]
+    for (side, i), v in clues.items():
+        x, y = {"top": (gx + i * c + c / 2, gy - 16), "bottom": (gx + i * c + c / 2, gy + 4 * c + 18),
+                "left": (gx - 18, gy + i * c + c / 2), "right": (gx + 4 * c + 18, gy + i * c + c / 2)}[side]
+        els.append(center_label(x, y, str(v), 22, PURPLE))
+    s_els = list(els)
+    for r in range(4):
+        for k in range(4):
+            s_els.append(center_label(gx + k * c + c / 2, gy + r * c + c / 2, str(sol_g[r][k]), 22, GREEN))
+    s_els.append(green_frame(gx, gy + 2 * c, 4 * c, c, 2))
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, " ".join(o), 26, LINE)] for o in opts])
+    card.body = els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — 1 3 2 4. Подсказка «1» ставит четвёрку у края; последняя 4 — в R2C3; "
+                      "дальше 3 в R4C4 и цепочка вычёркиваний.", ans)
+    save(56, task, sol)
+    return "B (1 3 2 4)"
+
+
+# --- 57. Угол между стрелками ------------------------------------------------------------------------
+def angle_between(h, m):
+    a = abs(30 * h - 5.5 * m) % 360
+    return min(a, 360 - a)
+
+
+def clock57(cx, cy, h, m, r=55):
+    els = [f'<circle cx="{cx}" cy="{f(cy)}" r="{r}" fill="{WHITE}" stroke="{LINE}" stroke-width="3"/>']
+    for k in range(12):
+        a = math.radians(30 * k)
+        els.append(line(cx + (r - 9) * math.sin(a), cy - (r - 9) * math.cos(a), cx + (r - 3) * math.sin(a),
+                        cy - (r - 3) * math.cos(a), LINE, 2))
+    for ang, ln, w, col in ((30 * h + 0.5 * m, 30, 5, LINE), (6 * m, 45, 3, BLUE)):
+        a = math.radians(ang)
+        els.append(line(cx, cy, cx + ln * math.sin(a), cy - ln * math.cos(a), col, w))
+    els.append(f'<circle cx="{cx}" cy="{f(cy)}" r="4" fill="{LINE}"/>')
+    return els
+
+
+def task57():
+    times = [(3, 0), (2, 20), (4, 30), (9, 45), (7, 20)]
+    angles = [angle_between(*t) for t in times]
+    assert angles[:4] == [90, 50, 45, 22.5] and angles[4] == 100
+    opts = [90, 80, 110, 100, 120, 260]
+    ans = "ABCDEF"[opts.index(100)]
+    card = Card(57, "Под каждыми часами стоит число. Какое число должно стоять под последними часами?")
+    cy = card.body_top + 130
+    t_els, s_els = [], []
+    for k, (h, m) in enumerate(times):
+        cx = 100 + 150 * k
+        els = clock57(cx, cy, h, m)
+        t_els += els
+        s_els += els
+        lab = f"{angles[k]:g}°".replace(".", ",")
+        if k == 4:
+            t_els += hidden_box(cx, cy + 90, 70, 36, size=24)
+            s_els.append(center_label(cx, cy + 90, lab, 24, GREEN))
+            a1, a2 = math.radians(6 * m), math.radians(30 * h + 0.5 * m)
+            r = 22
+            s_els.append(f'<path d="M{f(cx + r * math.sin(a1))} {f(cy - r * math.cos(a1))} A{r} {r} 0 0 1 '
+                         f'{f(cx + r * math.sin(a2))} {f(cy - r * math.cos(a2))}" fill="none" stroke="{GREEN}" stroke-width="4"/>')
+        else:
+            el = center_label(cx, cy + 90, lab, 24, LINE)
+            t_els.append(el)
+            s_els.append(el)
+    card.add_options([lambda x, y, s, o=o: [center_label(x, y, f"{o}°", 36, LINE)] for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: D — 100°. Угол между стрелками = |30·Ч − 5,5·М|: 7:20 → |210 − 110| = 100°.", ans)
+    save(57, task, sol)
+    return "D (100°)"
+
+
+# --- 58. Ремни -------------------------------------------------------------------------------------
+def belt(c1, r1, c2, r2, crossed):
+    d = c2[0] - c1[0]
+    phi = math.asin(((r1 + r2) if crossed else (r1 - r2)) / d)
+    els = []
+    for s in (-1, 1):
+        n = (math.sin(phi), s * math.cos(phi))
+        p1 = (c1[0] + r1 * n[0], c1[1] + r1 * n[1])
+        p2 = (c2[0] - r2 * n[0], c2[1] - r2 * n[1]) if crossed else (c2[0] + r2 * n[0], c2[1] + r2 * n[1])
+        els.append(line(*p1, *p2, LINE, 3))
+    return els
+
+
+def spin_icon(cx, cy, r, cw, color):
+    return spin_arrow(cx, cy, r, cw, color).replace('marker-end="url(#arr-k)"',
+                                                    f'marker-end="url(#arr-{"g" if color == GREEN else "r" if color == RED else "k"})"')
+
+
+def task58():
+    P = [(110, 40), (290, 20), (470, 40), (680, 10)]
+    crossed = [False, True, True]
+    dirs = [True]
+    for cr in crossed:
+        dirs.append(dirs[-1] != cr)
+    revs = P[0][1] / P[3][1]
+    assert revs == 4 and dirs[3] is True and dirs == [True, True, False, True]
+    opts = [(4, True), (4, False), (2, True), (16, True), (1, False), (8, False)]
+    ans = "ABCDEF"[opts.index((int(revs), dirs[3]))]
+    assert ans == "A"
+
+    card = Card(58, "Левый шкив делает 1 оборот по часовой стрелке. Сколько оборотов и в какую сторону "
+                    "сделает правый шкив?")
+    y = card.body_top + 150
+    els = []
+    for k, cr in enumerate(crossed):
+        els += belt((P[k][0], y), P[k][1], (P[k + 1][0], y), P[k + 1][1], cr)
+    for x, r in P:
+        els += [f'<circle cx="{x}" cy="{f(y)}" r="{r}" fill="{YELLOW}" stroke="{LINE}" stroke-width="3"/>',
+                f'<circle cx="{x}" cy="{f(y)}" r="4" fill="{LINE}"/>']
+    t_els = els + [spin_icon(110, y, 54, True, RED), text(110, y + 82, "1 оборот", 16, RED, "bold", "middle"),
+                   text(680, y + 50, "?", 28, LINE, "bold", "middle")]
+    s_els = list(els) + [text(110, y + 82, "1 оборот", 16, RED, "bold", "middle"),
+                         text(680, y + 50, "4", 24, GREEN, "bold", "middle")]
+    for (x, r), d in zip(P, dirs):
+        s_els.append(spin_icon(x, y, r + 14, d, GREEN))
+
+    def opt(o):
+        def draw(cx, cy, s):
+            return [text(cx - 12, cy + 12, str(o[0]), 32, LINE, "bold", "middle"), spin_icon(cx + 26, cy, 14, o[1], LINE)]
+        return draw
+
+    card.add_options([opt(o) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: A — 4 оборота по часовой. Скорость ремня одна по всей цепочке: 40/10 = 4 оборота; "
+                      "два перекрёста меняют направление дважды.", ans)
+    save(58, task, sol)
+    return "A (4 оборота по часовой)"
+
+
+# --- 59. Неравные плечи -------------------------------------------------------------------------------
+def fig59(kind, cx, base):
+    """Фигура, стоящая на линии base, центр по x = cx."""
+    if kind == "o":
+        return f'<circle cx="{f(cx)}" cy="{f(base - 12)}" r="12" fill="{RED}"/>'
+    if kind == "s":
+        return rect(cx - 12, base - 24, 24, 24, BLUE)
+    if kind == "t":
+        return polygon([(cx, base - 22.5), (cx + 13, base), (cx - 13, base)], GREEN)
+    pts = [(cx + (14 if k % 2 == 0 else 6) * math.cos(-math.pi / 2 + k * math.pi / 5),
+            base - 13 + (14 if k % 2 == 0 else 6) * math.sin(-math.pi / 2 + k * math.pi / 5)) for k in range(10)]
+    return polygon(pts, ORANGE)
+
+
+def group59(kinds, cx, base, step=28):
+    x0 = cx - step * (len(kinds) - 1) / 2
+    return [fig59(k, x0 + i * step, base - 2) for i, k in enumerate(kinds)]
+
+
+def scale59(cx, y, left, right, arm=80):
+    return [line(cx - arm, y, cx + arm, y, LINE, 4),
+            polygon([(cx, y + 2), (cx - 14, y + 30), (cx + 14, y + 30)], LINE)] + \
+        group59(left, cx - arm + 30, y) + group59(right, cx + arm - 30, y)
+
+
+def task59():
+    from fractions import Fraction as Fr
+    o = Fr(2)
+    s = 3 * o / 2                 # ООО = □□
+    t = s + o                     # □О = △
+    star = (2 * t + 2 * o) * 1 / 2  # ★·2 = (△△ОО)·1
+    assert (o, s, t, star) == (2, 3, 5, 7)
+    n = (star + o) / s
+    assert n == 3 and (2 * t + 2 * o) / s != n  # без учёта плеч ответ дробный
+    opts = [2, 3, 4, 5, 6, 7]
+    ans = "ABCDEF"[opts.index(int(n))]
+
+    card = Card(59, "Все три устройства в равновесии. На третьем — рычаг: левое плечо вдвое длиннее правого. "
+                    "Сколько квадратов уравновесят звезду и круг?")
+    y1 = card.body_top + 90
+    els = scale59(140, y1, "ooo", "ss") + scale59(400, y1, "so", "t")
+    els += [line(520, y1, 700, y1, LINE, 4), polygon([(640, y1 + 2), (626, y1 + 30), (654, y1 + 30)], LINE)]
+    els += [line(x, y1 + 6, x, y1 + 12, LINE, 2) for x in (520, 580, 640, 700)]
+    els += [fig59("*", 520, y1 - 2)] + group59("ttoo", 700, y1, 26)
+    y2 = y1 + 140
+    q = [line(320, y2, 480, y2, LINE, 4), polygon([(400, y2 + 2), (386, y2 + 30), (414, y2 + 30)], LINE)]
+    q += group59("*o", 350, y2)
+    t_els = els + q + [text(430, y2 - 6, "? ×", 22, LINE, "bold", "middle"), fig59("s", 464, y2 - 2)]
+    s_els = els + q + group59("sss", 450, y2, 28)
+    s_els.append(green_frame(408, y2 - 30, 84, 28, 2))
+    card.add_options([lambda x, y, s_, o_=o_: [center_label(x, y, str(o_), 40, LINE)] for o_ in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — 3. ● = 2, ■ = 3, ▲ = 5; рычаг: ★·2 = (5 + 5 + 2 + 2)·1 → ★ = 7; "
+                      "★ + ● = 9 = 3 ■.", ans)
+    save(59, task, sol)
+    return "B (3)"
+
+
+# --- 60. Пятница 13-е ------------------------------------------------------------------------------------
+MONTHS3 = ["ЯНВ", "ФЕВ", "МАР", "АПР", "МАЙ", "ИЮН", "ИЮЛ", "АВГ", "СЕН", "ОКТ", "НОЯ", "ДЕК"]
+
+
+def task60():
+    import datetime as dt
+    assert dt.date(2026, 1, 1).weekday() == 3          # четверг
+    assert not (2026 % 4 == 0)
+    fridays = [m for m in range(1, 13) if dt.date(2026, m, 13).weekday() == 4]
+    assert fridays == [2, 3, 11]
+    opts = [("янв, окт",), ("фев, мар,", "ноя"), ("фев, авг",), ("мар, ноя",), ("апр, июл",), ("фев, мар,", "авг")]
+    sets = [[1, 10], [2, 3, 11], [2, 8], [3, 11], [4, 7], [2, 3, 8]]
+    ans = "ABCDEF"[sets.index(fridays)]
+    assert ans == "B"
+
+    card = Card(60, "1 января 2026 года — четверг, год не високосный. В каких месяцах 2026 года 13-е число "
+                    "выпадает на пятницу?")
+    t_els, s_els = [], []
+    for m in range(12):
+        x, y = 30 + (m % 6) * 125, card.body_top + 40 + (m // 6) * 90
+        tile = rect(x, y, 110, 70, WHITE, 8, PURPLE, 2)
+        name = center_label(x + 55, y + 30, MONTHS3[m], 22, LINE)
+        extra = [text(x + 55, y + 58, "1 = ЧТ", 16, GREEN, "bold", "middle")] if m == 0 else []
+        t_els += [tile, name] + extra
+        hl = [rect(x, y, 110, 70, RED, 8, extra=' opacity="0.3"')] if m + 1 in fridays else []
+        s_els += [tile] + hl + [name] + extra
+    # силуэт кошки
+    kx, ky = 690, card.body_top + 255
+    cat = [f'<ellipse cx="{kx}" cy="{ky}" rx="22" ry="16" fill="{LINE}"/>',
+           f'<circle cx="{kx + 20}" cy="{ky - 16}" r="11" fill="{LINE}"/>',
+           polygon([(kx + 12, ky - 22), (kx + 14, ky - 34), (kx + 20, ky - 25)], LINE),
+           polygon([(kx + 22, ky - 25), (kx + 28, ky - 34), (kx + 30, ky - 21)], LINE),
+           f'<path d="M{kx - 20} {ky + 4} q-22 -4 -16 -28" fill="none" stroke="{LINE}" stroke-width="5" stroke-linecap="round"/>',
+           text(kx + 44, ky + 2, "13?", 22, LINE, "bold")]
+    t_els += cat
+    s_els += cat
+    card.add_options([lambda x, y, s, o=o: text_lines(x, y, list(o), 20) for o in opts])
+    card.body = t_els
+    task = card.render()
+    card.body = s_els
+    sol = card.render("Ответ: B — февраль, март, ноябрь. 13-е — пятница, когда 1-е — воскресенье: "
+                      "сдвиг от января +3 у февраля, марта и ноября.", ans)
+    save(60, task, sol)
+    return "B (фев, мар, ноя)"
+
+
+# =============================================================================
 # index.html
 # =============================================================================
 INDEX_TEMPLATE = """<!doctype html>
@@ -2516,15 +3460,26 @@ INDEX_TEMPLATE = """<!doctype html>
 <header class="top">
   <h1>Головоломки на закономерность</h1>
   <p>{count} задач. Нажмите на карточку, чтобы открыть её крупно, подумайте — и только потом смотрите ответ.</p>
+  <div class="toolbar">
+    <div class="filters" role="group" aria-label="Какие задачи показывать">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">Все <span class="count" data-count="all">{count}</span></button>
+      <button type="button" class="chip" data-filter="unsolved" aria-pressed="false">Нерешённые <span class="count" data-count="unsolved">{count}</span></button>
+      <button type="button" class="chip" data-filter="solved" aria-pressed="false">Решённые <span class="count" data-count="solved">0</span></button>
+    </div>
+  </div>
 </header>
-<main class="grid">
+<main class="grid" id="grid">
 {cards}
 </main>
+<p class="empty" id="empty" hidden>Здесь пока ничего нет.</p>
 <dialog class="viewer" id="viewer" aria-labelledby="v-title">
   <div class="viewer-inner">
     <div class="viewer-bar">
       <h2 id="v-title">Задача</h2>
-      <button type="button" class="btn btn-icon" id="v-close" aria-label="Закрыть">✕</button>
+      <div class="viewer-bar-right">
+        <button type="button" class="solved-btn" id="v-solved" aria-pressed="false">Решено</button>
+        <button type="button" class="btn btn-icon" id="v-close" aria-label="Закрыть">✕</button>
+      </div>
     </div>
     <div class="viewer-img"><img id="v-img" alt="" width="800" height="600"></div>
     <div class="viewer-controls">
@@ -2535,7 +3490,17 @@ INDEX_TEMPLATE = """<!doctype html>
     <p class="answer" id="v-answer" aria-live="polite" hidden></p>
   </div>
 </dialog>
-<footer class="foot">Стрелки ← → листают задачи, Esc закрывает окно.</footer>
+<div class="consent" id="consent" role="region" aria-label="Cookie" hidden>
+  <p>Сайт использует cookie, чтобы запомнить, какие задачи вы отметили решёнными. Других данных не собирается и никуда не отправляется.</p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-main" id="c-accept">Принять</button>
+    <button type="button" class="btn" id="c-decline">Отказаться</button>
+  </div>
+</div>
+<footer class="foot">
+  Стрелки ← → листают задачи, Esc закрывает окно.
+  <button type="button" class="link-btn" id="c-settings">Настройки cookie</button>
+</footer>
 </body>
 </html>
 """
@@ -2548,16 +3513,21 @@ def build_index(answers):
         expl = CARDS[n].solution_text
         rest = expl.split(". ", 1)[1] if ". " in expl else ""
         cards.append(
-            f'  <a class="card" href="img/{n:02d}_task.svg" data-n="{n}" data-answer="{h(answers[n])}" '
-            f'data-expl="{h(rest)}">\n'
-            f'    <img src="img/{n:02d}_task.svg" alt="Задача {n}" width="800" height="600" loading="lazy">\n'
-            f'    <span class="card-title">Задача {n}</span>\n  </a>')
+            f'  <article class="card" data-n="{n}" data-answer="{h(answers[n])}" data-expl="{h(rest)}">\n'
+            f'    <a class="card-link" href="img/{n:02d}_task.svg" aria-label="Открыть задачу {n}">\n'
+            f'      <img src="img/{n:02d}_task.svg" alt="Задача {n}" width="800" height="600" loading="lazy">\n'
+            f'    </a>\n'
+            f'    <div class="card-foot">\n'
+            f'      <span class="card-title">Задача {n}</span>\n'
+            f'      <button type="button" class="solved-btn" aria-pressed="false" '
+            f'aria-label="Задача {n} решена">Решено</button>\n'
+            f'    </div>\n  </article>')
     (OUT / "index.html").write_text(
         INDEX_TEMPLATE.replace("{count}", str(len(cards))).replace("{cards}", "\n".join(cards)),
         encoding="utf-8")
 
 
-TASKS = {n: globals()[f"task{n:02d}"] for n in range(1, 45)}
+TASKS = {n: globals()[f"task{n:02d}"] for n in range(1, 61)}
 
 if __name__ == "__main__":
     nums = [int(a) for a in sys.argv[1:]] or sorted(TASKS)

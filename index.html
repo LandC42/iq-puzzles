@@ -13,191 +13,566 @@
 <body>
 <header class="top">
   <h1>Головоломки на закономерность</h1>
-  <p>44 задач. Нажмите на карточку, чтобы открыть её крупно, подумайте — и только потом смотрите ответ.</p>
+  <p>60 задач. Нажмите на карточку, чтобы открыть её крупно, подумайте — и только потом смотрите ответ.</p>
+  <div class="toolbar">
+    <div class="filters" role="group" aria-label="Какие задачи показывать">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">Все <span class="count" data-count="all">60</span></button>
+      <button type="button" class="chip" data-filter="unsolved" aria-pressed="false">Нерешённые <span class="count" data-count="unsolved">60</span></button>
+      <button type="button" class="chip" data-filter="solved" aria-pressed="false">Решённые <span class="count" data-count="solved">0</span></button>
+    </div>
+  </div>
 </header>
-<main class="grid">
-  <a class="card" href="img/01_task.svg" data-n="1" data-answer="К" data-expl="Длины строк 11-7-5-7-7-7-11 и «Ч» в начале 4-й строки → ЧЕТВЕРГ, значит строки — дни недели; «?» стоит в ВОСК…РЕСЕНЬЕ.">
-    <img src="img/01_task.svg" alt="Задача 1" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 1</span>
-  </a>
-  <a class="card" href="img/02_task.svg" data-n="2" data-answer="Я" data-expl="Строки — числа ОДИН…ДЕСЯТЬ, «?» стоит в ДЕС(Я)ТЬ.">
-    <img src="img/02_task.svg" alt="Задача 2" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 2</span>
-  </a>
-  <a class="card" href="img/03_task.svg" data-n="3" data-answer="В" data-expl="Это первые буквы числительных: один, два, три … семь, восемь.">
-    <img src="img/03_task.svg" alt="Задача 3" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 3</span>
-  </a>
-  <a class="card" href="img/04_task.svg" data-n="4" data-answer="А" data-expl="Это первые буквы месяцев: январь, февраль … июль, август.">
-    <img src="img/04_task.svg" alt="Задача 4" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 4</span>
-  </a>
-  <a class="card" href="img/05_task.svg" data-n="5" data-answer="Й" data-expl="Это последние буквы месяцев: январЬ, февралЬ, марТ, апрелЬ, маЙ…">
-    <img src="img/05_task.svg" alt="Задача 5" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 5</span>
-  </a>
-  <a class="card" href="img/06_task.svg" data-n="6" data-answer="С" data-expl="Буквы идут столбцами клавиатуры ЙЦУКЕН сверху вниз: Й-Ф-Я, Ц-Ы-Ч, У-В-С.">
-    <img src="img/06_task.svg" alt="Задача 6" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 6</span>
-  </a>
-  <a class="card" href="img/07_task.svg" data-n="7" data-answer="87" data-expl="Переверните картинку: места пронумерованы подряд 86, 87, 88, 89, 90, 91.">
-    <img src="img/07_task.svg" alt="Задача 7" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 7</span>
-  </a>
-  <a class="card" href="img/08_task.svg" data-n="8" data-answer="A (9:00)" data-expl="Каждый раз прибавляется 2 ч 15 мин: 2:15 → 4:30 → 6:45 → 9:00.">
-    <img src="img/08_task.svg" alt="Задача 8" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 8</span>
-  </a>
-  <a class="card" href="img/09_task.svg" data-n="9" data-answer="2" data-expl="Считаются замкнутые «петли»: у 0, 6 и 9 по одной, у 8 — две. В 2581 петли есть только у восьмёрки.">
-    <img src="img/09_task.svg" alt="Задача 9" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 9</span>
-  </a>
-  <a class="card" href="img/10_task.svg" data-n="10" data-answer="5" data-expl="Каждая цифра равна числу горящих сегментов предыдущей: 8 → 7 → 3 → 5 → 5.">
-    <img src="img/10_task.svg" alt="Задача 10" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 10</span>
-  </a>
-  <a class="card" href="img/11_task.svg" data-n="11" data-answer="312211" data-expl="Каждая строка «читает вслух» предыдущую: 111221 = три единицы, две двойки, одна единица.">
-    <img src="img/11_task.svg" alt="Задача 11" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 11</span>
-  </a>
-  <a class="card" href="img/12_task.svg" data-n="12" data-answer="31" data-expl="Областей C(6,4) + C(6,2) + 1 = 15 + 15 + 1 = 31.">
-    <img src="img/12_task.svg" alt="Задача 12" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 12</span>
-  </a>
-  <a class="card" href="img/13_task.svg" data-n="13" data-answer="A" data-expl="Цвет постоянен в строке, количество растёт 1-2-3, каждая из трёх фигур встречается в строке ровно один раз.">
-    <img src="img/13_task.svg" alt="Задача 13" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 13</span>
-  </a>
-  <a class="card" href="img/14_task.svg" data-n="14" data-answer="A" data-expl="В третьей клетке остаются линии, которые есть ровно в одной из первых двух: общие исчезают.">
-    <img src="img/14_task.svg" alt="Задача 14" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 14</span>
-  </a>
-  <a class="card" href="img/15_task.svg" data-n="15" data-answer="D" data-expl="У внутренней фигуры обычно на одну сторону больше, чем у внешней, а в D — на одну меньше.">
-    <img src="img/15_task.svg" alt="Задача 15" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 15</span>
-  </a>
-  <a class="card" href="img/16_task.svg" data-n="16" data-answer="A" data-expl="Точка обходит углы по часовой стрелке, треугольник — стороны против часовой, цвет точки чередуется.">
-    <img src="img/16_task.svg" alt="Задача 16" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 16</span>
-  </a>
-  <a class="card" href="img/17_task.svg" data-n="17" data-answer="C (синий)" data-expl="Цвета идут циклом К → Ж → С по «змейке»; «?» — 15-я клетка, 15 mod 3 = 0 → синий.">
-    <img src="img/17_task.svg" alt="Задача 17" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 17</span>
-  </a>
-  <a class="card" href="img/18_task.svg" data-n="18" data-answer="A" data-expl="Это цифры 1, 2, 3, 4, к каждой слева пристроено зеркальное отражение; дальше идёт 5.">
-    <img src="img/18_task.svg" alt="Задача 18" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 18</span>
-  </a>
-  <a class="card" href="img/19_task.svg" data-n="19" data-answer="45" data-expl="★ = 10, ● = 5, ▲ = 4; умножение выполняется первым: 5 + 10 × 4 = 45 (а не 60).">
-    <img src="img/19_task.svg" alt="Задача 19" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 19</span>
-  </a>
-  <a class="card" href="img/20_task.svg" data-n="20" data-answer="9" data-expl="Центр = верх × левый − правый: 3·4−2 = 10, 5·2−1 = 9, 6·3−4 = 14, 7·2−5 = 9.">
-    <img src="img/20_task.svg" alt="Задача 20" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 20</span>
-  </a>
-  <a class="card" href="img/21_task.svg" data-n="21" data-answer="D (30)" data-expl="Квадратов 1×1 — 16, 2×2 — 9, 3×3 — 4, 4×4 — 1: 16 + 9 + 4 + 1 = 30.">
-    <img src="img/21_task.svg" alt="Задача 21" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 21</span>
-  </a>
-  <a class="card" href="img/22_task.svg" data-n="22" data-answer="A" data-expl="Это латинские заглавные буквы с вертикальной осью симметрии по алфавиту: A, H, I, M, O, T, U…">
-    <img src="img/22_task.svg" alt="Задача 22" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 22</span>
-  </a>
-  <a class="card" href="img/23_task.svg" data-n="23" data-answer="42" data-expl="Складываются номера букв в алфавите (с Ё): М14 + И10 + Р18 = 42; КОТ = 12 + 16 + 20 = 48.">
-    <img src="img/23_task.svg" alt="Задача 23" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 23</span>
-  </a>
-  <a class="card" href="img/24_task.svg" data-n="24" data-answer="ЛИМОН" data-expl="Все остальные слова — палиндромы: читаются одинаково в обе стороны.">
-    <img src="img/24_task.svg" alt="Задача 24" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 24</span>
-  </a>
-  <a class="card" href="img/25_task.svg" data-n="25" data-answer="Л" data-expl="Это ноты ДО…СИ; красный скруглённый квадрат = Л, как в СОЛЬ.">
-    <img src="img/25_task.svg" alt="Задача 25" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 25</span>
-  </a>
-  <a class="card" href="img/26_task.svg" data-n="26" data-answer="СЕКРЕТ" data-expl="Восемь планет по порядку от Солнца; справа С-Е-К-Р-Е-Т.">
-    <img src="img/26_task.svg" alt="Задача 26" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 26</span>
-  </a>
-  <a class="card" href="img/27_task.svg" data-n="27" data-answer="A (С ···)" data-expl="Коды идут по длине, а внутри длины — как двоичные числа (· = 0, – = 1): 0, 1, 00, 01, 10, 11, 000.">
-    <img src="img/27_task.svg" alt="Задача 27" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 27</span>
-  </a>
-  <a class="card" href="img/28_task.svg" data-n="28" data-answer="C (BAT)" data-expl="На кнопочном телефоне обе части набираются одними и теми же клавишами: ACT = BAT = 228.">
-    <img src="img/28_task.svg" alt="Задача 28" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 28</span>
-  </a>
-  <a class="card" href="img/29_task.svg" data-n="29" data-answer="A (У)" data-expl="Только эти 12 кириллических букв совпадают по начертанию с латинскими и разрешены на российских номерах.">
-    <img src="img/29_task.svg" alt="Задача 29" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 29</span>
-  </a>
-  <a class="card" href="img/30_task.svg" data-n="30" data-answer="B (напрасны)" data-expl="Длины слов — цифры числа π = 3,14159265358…">
-    <img src="img/30_task.svg" alt="Задача 30" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 30</span>
-  </a>
-  <a class="card" href="img/31_task.svg" data-n="31" data-answer="C (между 9 и 0)" data-expl="Цифры стоят по алфавиту названий; «десять» — после «девять» (в &lt; с) и перед «ноль».">
-    <img src="img/31_task.svg" alt="Задача 31" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 31</span>
-  </a>
-  <a class="card" href="img/32_task.svg" data-n="32" data-answer="A (1)" data-expl="Это число символов в римской записи чисел 1–10: I, II, III, IV, V … IX, X.">
-    <img src="img/32_task.svg" alt="Задача 32" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 32</span>
-  </a>
-  <a class="card" href="img/33_task.svg" data-n="33" data-answer="A (0100)" data-expl="За шаг меняется ровно одна лампа, номер разряда идёт по «линейке» 0, 1, 0, 2, 0, 1, 0 — это код Грея.">
-    <img src="img/33_task.svg" alt="Задача 33" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 33</span>
-  </a>
-  <a class="card" href="img/34_task.svg" data-n="34" data-answer="B (118)" data-expl="Разности 8, 8, 18, 18, 32, 32 (2·2², 2·3², 2·4²): это атомные номера инертных газов.">
-    <img src="img/34_task.svg" alt="Задача 34" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 34</span>
-  </a>
-  <a class="card" href="img/35_task.svg" data-n="35" data-answer="D (4)" data-expl="За 2 хода b2 недостижима, а ход коня всегда меняет цвет клетки — значит, ходов чётное число: a1 → b3 → c5 → d3 → b2.">
-    <img src="img/35_task.svg" alt="Задача 35" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 35</span>
-  </a>
-  <a class="card" href="img/36_task.svg" data-n="36" data-answer="D" data-expl="У кубиков B и C рядом стоят противоположные грани, а A, E, F — зеркальные варианты.">
-    <img src="img/36_task.svg" alt="Задача 36" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 36</span>
-  </a>
-  <a class="card" href="img/37_task.svg" data-n="37" data-answer="C (26)" data-expl="Противоположные грани кости дают в сумме 7: 5 + 7 + 7 + 7 = 26.">
-    <img src="img/37_task.svg" alt="Задача 37" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 37</span>
-  </a>
-  <a class="card" href="img/38_task.svg" data-n="38" data-answer="B" data-expl="Отражение через горизонтальный сгиб не меняет «►», через вертикальный — превращает в «◄».">
-    <img src="img/38_task.svg" alt="Задача 38" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 38</span>
-  </a>
-  <a class="card" href="img/39_task.svg" data-n="39" data-answer="C (заклинит)" data-expl="В замкнутом кольце из нечётного числа шестерёнок соседние 5 и 1 обязаны крутиться в одну сторону.">
-    <img src="img/39_task.svg" alt="Задача 39" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 39</span>
-  </a>
-  <a class="card" href="img/40_task.svg" data-n="40" data-answer="A (красный + жёлтый)" data-expl="По ПДД РФ (п. 6.2) это сочетание запрещает движение и предупреждает о скором зелёном.">
-    <img src="img/40_task.svg" alt="Задача 40" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 40</span>
-  </a>
-  <a class="card" href="img/41_task.svg" data-n="41" data-answer="B (F♯)" data-expl="Образец — мажорная гамма; в соль мажоре седьмая ступень — фа-диез.">
-    <img src="img/41_task.svg" alt="Задача 41" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 41</span>
-  </a>
-  <a class="card" href="img/42_task.svg" data-n="42" data-answer="A (9♠)" data-expl="Значения растут на 2 (туз = 1), масти идут по кругу ♠ ♥ ♣ ♦.">
-    <img src="img/42_task.svg" alt="Задача 42" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 42</span>
-  </a>
-  <a class="card" href="img/43_task.svg" data-n="43" data-answer="B (группа П)" data-expl="Слева выпуклые фигуры, справа невыпуклые; «наконечник» похож на треугольник, но у него есть входящий угол.">
-    <img src="img/43_task.svg" alt="Задача 43" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 43</span>
-  </a>
-  <a class="card" href="img/44_task.svg" data-n="44" data-answer="E (MAGIC)" data-expl="Нет ни «M», ни «Ma»: на M начинаются только Mc, Md, Mg, Mn, Mo, Mt.">
-    <img src="img/44_task.svg" alt="Задача 44" width="800" height="600" loading="lazy">
-    <span class="card-title">Задача 44</span>
-  </a>
+<main class="grid" id="grid">
+  <article class="card" data-n="1" data-answer="К" data-expl="Длины строк 11-7-5-7-7-7-11 и «Ч» в начале 4-й строки → ЧЕТВЕРГ, значит строки — дни недели; «?» стоит в ВОСК…РЕСЕНЬЕ.">
+    <a class="card-link" href="img/01_task.svg" aria-label="Открыть задачу 1">
+      <img src="img/01_task.svg" alt="Задача 1" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 1</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 1 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="2" data-answer="Я" data-expl="Строки — числа ОДИН…ДЕСЯТЬ, «?» стоит в ДЕС(Я)ТЬ.">
+    <a class="card-link" href="img/02_task.svg" aria-label="Открыть задачу 2">
+      <img src="img/02_task.svg" alt="Задача 2" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 2</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 2 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="3" data-answer="В" data-expl="Это первые буквы числительных: один, два, три … семь, восемь.">
+    <a class="card-link" href="img/03_task.svg" aria-label="Открыть задачу 3">
+      <img src="img/03_task.svg" alt="Задача 3" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 3</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 3 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="4" data-answer="А" data-expl="Это первые буквы месяцев: январь, февраль … июль, август.">
+    <a class="card-link" href="img/04_task.svg" aria-label="Открыть задачу 4">
+      <img src="img/04_task.svg" alt="Задача 4" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 4</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 4 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="5" data-answer="Й" data-expl="Это последние буквы месяцев: январЬ, февралЬ, марТ, апрелЬ, маЙ…">
+    <a class="card-link" href="img/05_task.svg" aria-label="Открыть задачу 5">
+      <img src="img/05_task.svg" alt="Задача 5" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 5</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 5 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="6" data-answer="С" data-expl="Буквы идут столбцами клавиатуры ЙЦУКЕН сверху вниз: Й-Ф-Я, Ц-Ы-Ч, У-В-С.">
+    <a class="card-link" href="img/06_task.svg" aria-label="Открыть задачу 6">
+      <img src="img/06_task.svg" alt="Задача 6" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 6</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 6 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="7" data-answer="87" data-expl="Переверните картинку: места пронумерованы подряд 86, 87, 88, 89, 90, 91.">
+    <a class="card-link" href="img/07_task.svg" aria-label="Открыть задачу 7">
+      <img src="img/07_task.svg" alt="Задача 7" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 7</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 7 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="8" data-answer="A (9:00)" data-expl="Каждый раз прибавляется 2 ч 15 мин: 2:15 → 4:30 → 6:45 → 9:00.">
+    <a class="card-link" href="img/08_task.svg" aria-label="Открыть задачу 8">
+      <img src="img/08_task.svg" alt="Задача 8" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 8</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 8 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="9" data-answer="2" data-expl="Считаются замкнутые «петли»: у 0, 6 и 9 по одной, у 8 — две. В 2581 петли есть только у восьмёрки.">
+    <a class="card-link" href="img/09_task.svg" aria-label="Открыть задачу 9">
+      <img src="img/09_task.svg" alt="Задача 9" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 9</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 9 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="10" data-answer="5" data-expl="Каждая цифра равна числу горящих сегментов предыдущей: 8 → 7 → 3 → 5 → 5.">
+    <a class="card-link" href="img/10_task.svg" aria-label="Открыть задачу 10">
+      <img src="img/10_task.svg" alt="Задача 10" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 10</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 10 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="11" data-answer="312211" data-expl="Каждая строка «читает вслух» предыдущую: 111221 = три единицы, две двойки, одна единица.">
+    <a class="card-link" href="img/11_task.svg" aria-label="Открыть задачу 11">
+      <img src="img/11_task.svg" alt="Задача 11" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 11</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 11 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="12" data-answer="31" data-expl="Областей C(6,4) + C(6,2) + 1 = 15 + 15 + 1 = 31.">
+    <a class="card-link" href="img/12_task.svg" aria-label="Открыть задачу 12">
+      <img src="img/12_task.svg" alt="Задача 12" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 12</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 12 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="13" data-answer="A" data-expl="Цвет постоянен в строке, количество растёт 1-2-3, каждая из трёх фигур встречается в строке ровно один раз.">
+    <a class="card-link" href="img/13_task.svg" aria-label="Открыть задачу 13">
+      <img src="img/13_task.svg" alt="Задача 13" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 13</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 13 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="14" data-answer="A" data-expl="В третьей клетке остаются линии, которые есть ровно в одной из первых двух: общие исчезают.">
+    <a class="card-link" href="img/14_task.svg" aria-label="Открыть задачу 14">
+      <img src="img/14_task.svg" alt="Задача 14" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 14</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 14 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="15" data-answer="D" data-expl="У внутренней фигуры обычно на одну сторону больше, чем у внешней, а в D — на одну меньше.">
+    <a class="card-link" href="img/15_task.svg" aria-label="Открыть задачу 15">
+      <img src="img/15_task.svg" alt="Задача 15" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 15</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 15 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="16" data-answer="A" data-expl="Точка обходит углы по часовой стрелке, треугольник — стороны против часовой, цвет точки чередуется.">
+    <a class="card-link" href="img/16_task.svg" aria-label="Открыть задачу 16">
+      <img src="img/16_task.svg" alt="Задача 16" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 16</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 16 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="17" data-answer="C (синий)" data-expl="Цвета идут циклом К → Ж → С по «змейке»; «?» — 15-я клетка, 15 mod 3 = 0 → синий.">
+    <a class="card-link" href="img/17_task.svg" aria-label="Открыть задачу 17">
+      <img src="img/17_task.svg" alt="Задача 17" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 17</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 17 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="18" data-answer="A" data-expl="Это цифры 1, 2, 3, 4, к каждой слева пристроено зеркальное отражение; дальше идёт 5.">
+    <a class="card-link" href="img/18_task.svg" aria-label="Открыть задачу 18">
+      <img src="img/18_task.svg" alt="Задача 18" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 18</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 18 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="19" data-answer="45" data-expl="★ = 10, ● = 5, ▲ = 4; умножение выполняется первым: 5 + 10 × 4 = 45 (а не 60).">
+    <a class="card-link" href="img/19_task.svg" aria-label="Открыть задачу 19">
+      <img src="img/19_task.svg" alt="Задача 19" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 19</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 19 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="20" data-answer="9" data-expl="Центр = верх × левый − правый: 3·4−2 = 10, 5·2−1 = 9, 6·3−4 = 14, 7·2−5 = 9.">
+    <a class="card-link" href="img/20_task.svg" aria-label="Открыть задачу 20">
+      <img src="img/20_task.svg" alt="Задача 20" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 20</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 20 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="21" data-answer="D (30)" data-expl="Квадратов 1×1 — 16, 2×2 — 9, 3×3 — 4, 4×4 — 1: 16 + 9 + 4 + 1 = 30.">
+    <a class="card-link" href="img/21_task.svg" aria-label="Открыть задачу 21">
+      <img src="img/21_task.svg" alt="Задача 21" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 21</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 21 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="22" data-answer="A" data-expl="Это латинские заглавные буквы с вертикальной осью симметрии по алфавиту: A, H, I, M, O, T, U…">
+    <a class="card-link" href="img/22_task.svg" aria-label="Открыть задачу 22">
+      <img src="img/22_task.svg" alt="Задача 22" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 22</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 22 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="23" data-answer="42" data-expl="Складываются номера букв в алфавите (с Ё): М14 + И10 + Р18 = 42; КОТ = 12 + 16 + 20 = 48.">
+    <a class="card-link" href="img/23_task.svg" aria-label="Открыть задачу 23">
+      <img src="img/23_task.svg" alt="Задача 23" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 23</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 23 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="24" data-answer="ЛИМОН" data-expl="Все остальные слова — палиндромы: читаются одинаково в обе стороны.">
+    <a class="card-link" href="img/24_task.svg" aria-label="Открыть задачу 24">
+      <img src="img/24_task.svg" alt="Задача 24" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 24</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 24 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="25" data-answer="Л" data-expl="Это ноты ДО…СИ; красный скруглённый квадрат = Л, как в СОЛЬ.">
+    <a class="card-link" href="img/25_task.svg" aria-label="Открыть задачу 25">
+      <img src="img/25_task.svg" alt="Задача 25" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 25</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 25 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="26" data-answer="СЕКРЕТ" data-expl="Восемь планет по порядку от Солнца; справа С-Е-К-Р-Е-Т.">
+    <a class="card-link" href="img/26_task.svg" aria-label="Открыть задачу 26">
+      <img src="img/26_task.svg" alt="Задача 26" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 26</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 26 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="27" data-answer="A (С ···)" data-expl="Коды идут по длине, а внутри длины — как двоичные числа (· = 0, – = 1): 0, 1, 00, 01, 10, 11, 000.">
+    <a class="card-link" href="img/27_task.svg" aria-label="Открыть задачу 27">
+      <img src="img/27_task.svg" alt="Задача 27" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 27</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 27 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="28" data-answer="C (BAT)" data-expl="На кнопочном телефоне обе части набираются одними и теми же клавишами: ACT = BAT = 228.">
+    <a class="card-link" href="img/28_task.svg" aria-label="Открыть задачу 28">
+      <img src="img/28_task.svg" alt="Задача 28" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 28</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 28 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="29" data-answer="A (У)" data-expl="Только эти 12 кириллических букв совпадают по начертанию с латинскими и разрешены на российских номерах.">
+    <a class="card-link" href="img/29_task.svg" aria-label="Открыть задачу 29">
+      <img src="img/29_task.svg" alt="Задача 29" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 29</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 29 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="30" data-answer="B (напрасны)" data-expl="Длины слов — цифры числа π = 3,14159265358…">
+    <a class="card-link" href="img/30_task.svg" aria-label="Открыть задачу 30">
+      <img src="img/30_task.svg" alt="Задача 30" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 30</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 30 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="31" data-answer="C (между 9 и 0)" data-expl="Цифры стоят по алфавиту названий; «десять» — после «девять» (в &lt; с) и перед «ноль».">
+    <a class="card-link" href="img/31_task.svg" aria-label="Открыть задачу 31">
+      <img src="img/31_task.svg" alt="Задача 31" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 31</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 31 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="32" data-answer="A (1)" data-expl="Это число символов в римской записи чисел 1–10: I, II, III, IV, V … IX, X.">
+    <a class="card-link" href="img/32_task.svg" aria-label="Открыть задачу 32">
+      <img src="img/32_task.svg" alt="Задача 32" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 32</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 32 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="33" data-answer="A (0100)" data-expl="За шаг меняется ровно одна лампа, номер разряда идёт по «линейке» 0, 1, 0, 2, 0, 1, 0 — это код Грея.">
+    <a class="card-link" href="img/33_task.svg" aria-label="Открыть задачу 33">
+      <img src="img/33_task.svg" alt="Задача 33" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 33</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 33 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="34" data-answer="B (118)" data-expl="Разности 8, 8, 18, 18, 32, 32 (2·2², 2·3², 2·4²): это атомные номера инертных газов.">
+    <a class="card-link" href="img/34_task.svg" aria-label="Открыть задачу 34">
+      <img src="img/34_task.svg" alt="Задача 34" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 34</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 34 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="35" data-answer="D (4)" data-expl="За 2 хода b2 недостижима, а ход коня всегда меняет цвет клетки — значит, ходов чётное число: a1 → b3 → c5 → d3 → b2.">
+    <a class="card-link" href="img/35_task.svg" aria-label="Открыть задачу 35">
+      <img src="img/35_task.svg" alt="Задача 35" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 35</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 35 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="36" data-answer="D" data-expl="У кубиков B и C рядом стоят противоположные грани, а A, E, F — зеркальные варианты.">
+    <a class="card-link" href="img/36_task.svg" aria-label="Открыть задачу 36">
+      <img src="img/36_task.svg" alt="Задача 36" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 36</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 36 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="37" data-answer="C (26)" data-expl="Противоположные грани кости дают в сумме 7: 5 + 7 + 7 + 7 = 26.">
+    <a class="card-link" href="img/37_task.svg" aria-label="Открыть задачу 37">
+      <img src="img/37_task.svg" alt="Задача 37" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 37</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 37 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="38" data-answer="B" data-expl="Отражение через горизонтальный сгиб не меняет «►», через вертикальный — превращает в «◄».">
+    <a class="card-link" href="img/38_task.svg" aria-label="Открыть задачу 38">
+      <img src="img/38_task.svg" alt="Задача 38" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 38</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 38 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="39" data-answer="C (заклинит)" data-expl="В замкнутом кольце из нечётного числа шестерёнок соседние 5 и 1 обязаны крутиться в одну сторону.">
+    <a class="card-link" href="img/39_task.svg" aria-label="Открыть задачу 39">
+      <img src="img/39_task.svg" alt="Задача 39" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 39</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 39 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="40" data-answer="A (красный + жёлтый)" data-expl="По ПДД РФ (п. 6.2) это сочетание запрещает движение и предупреждает о скором зелёном.">
+    <a class="card-link" href="img/40_task.svg" aria-label="Открыть задачу 40">
+      <img src="img/40_task.svg" alt="Задача 40" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 40</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 40 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="41" data-answer="B (F♯)" data-expl="Образец — мажорная гамма; в соль мажоре седьмая ступень — фа-диез.">
+    <a class="card-link" href="img/41_task.svg" aria-label="Открыть задачу 41">
+      <img src="img/41_task.svg" alt="Задача 41" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 41</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 41 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="42" data-answer="A (9♠)" data-expl="Значения растут на 2 (туз = 1), масти идут по кругу ♠ ♥ ♣ ♦.">
+    <a class="card-link" href="img/42_task.svg" aria-label="Открыть задачу 42">
+      <img src="img/42_task.svg" alt="Задача 42" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 42</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 42 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="43" data-answer="B (группа П)" data-expl="Слева выпуклые фигуры, справа невыпуклые; «наконечник» похож на треугольник, но у него есть входящий угол.">
+    <a class="card-link" href="img/43_task.svg" aria-label="Открыть задачу 43">
+      <img src="img/43_task.svg" alt="Задача 43" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 43</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 43 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="44" data-answer="E (MAGIC)" data-expl="Нет ни «M», ни «Ma»: на M начинаются только Mc, Md, Mg, Mn, Mo, Mt.">
+    <a class="card-link" href="img/44_task.svg" aria-label="Открыть задачу 44">
+      <img src="img/44_task.svg" alt="Задача 44" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 44</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 44 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="45" data-answer="D (31)" data-expl="Это число 16, записанное в системах с основаниями 16, 15, 14 … 2; в пятеричной 16 = 31.">
+    <a class="card-link" href="img/45_task.svg" aria-label="Открыть задачу 45">
+      <img src="img/45_task.svg" alt="Задача 45" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 45</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 45 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="46" data-answer="E (55)" data-expl="Шрифт Брайля: 1, 1, 2, 3, 5, 8, 13, 21, 34 — это числа Фибоначчи, дальше 55.">
+    <a class="card-link" href="img/46_task.svg" aria-label="Открыть задачу 46">
+      <img src="img/46_task.svg" alt="Задача 46" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 46</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 46 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="47" data-answer="D (17 и 26)" data-expl="Чётное — делим на 2, нечётное — умножаем на 3 и прибавляем 1 (гипотеза Коллатца).">
+    <a class="card-link" href="img/47_task.svg" aria-label="Открыть задачу 47">
+      <img src="img/47_task.svg" alt="Задача 47" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 47</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 47 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="48" data-answer="D (6)" data-expl="Каждое число — сумма двух предыдущих, сведённая к одной цифре: 8 + 7 = 15 → 1 + 5 = 6.">
+    <a class="card-link" href="img/48_task.svg" aria-label="Открыть задачу 48">
+      <img src="img/48_task.svg" alt="Задача 48" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 48</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 48 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="49" data-answer="F (34)" data-expl="1, 2, 3, 5, 8, 13, 21, 34: крайний столбец закрывает либо одна вертикальная доминошка, либо пара горизонтальных.">
+    <a class="card-link" href="img/49_task.svg" aria-label="Открыть задачу 49">
+      <img src="img/49_task.svg" alt="Задача 49" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 49</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 49 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="50" data-answer="C" data-expl="Синий = 1, красный = 2, серый = 0; кружок = сумма двух верхних по модулю 3 (треугольник Паскаля mod 3).">
+    <a class="card-link" href="img/50_task.svg" aria-label="Открыть задачу 50">
+      <img src="img/50_task.svg" alt="Задача 50" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 50</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 50 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="51" data-answer="A" data-expl="Шаги 5–10: на чёрной клетке поворот налево, затем три поворота направо на белых, направо и снова налево.">
+    <a class="card-link" href="img/51_task.svg" aria-label="Открыть задачу 51">
+      <img src="img/51_task.svg" alt="Задача 51" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 51</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 51 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="52" data-answer="D" data-expl="Выживают верх и два нижних угла, рождаются 3 клетки; центр и середины сторон гибнут от тесноты.">
+    <a class="card-link" href="img/52_task.svg" aria-label="Открыть задачу 52">
+      <img src="img/52_task.svg" alt="Задача 52" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 52</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 52 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="53" data-answer="E" data-expl="Ход 8 — большой диск на правый стержень; ход 9 — маленький со среднего на правый; ход 10 — второй диск со среднего на левый.">
+    <a class="card-link" href="img/53_task.svg" aria-label="Открыть задачу 53">
+      <img src="img/53_task.svg" alt="Задача 53" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 53</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 53 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="54" data-answer="E (окошко)" data-expl="Нечётных узлов (степень 3) у «окошка» четыре — больше двух, значит, одним росчерком нельзя.">
+    <a class="card-link" href="img/54_task.svg" aria-label="Открыть задачу 54">
+      <img src="img/54_task.svg" alt="Задача 54" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 54</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 54 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="55" data-answer="D (14)" data-expl="В каждой клетке — меньшее из высот её столбца (спереди) и ряда (справа): 5 + 6 + 3 = 14.">
+    <a class="card-link" href="img/55_task.svg" aria-label="Открыть задачу 55">
+      <img src="img/55_task.svg" alt="Задача 55" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 55</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 55 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="56" data-answer="B (1 3 2 4)" data-expl="Подсказка «1» ставит четвёрку у края; последняя 4 — в R2C3; дальше 3 в R4C4 и цепочка вычёркиваний.">
+    <a class="card-link" href="img/56_task.svg" aria-label="Открыть задачу 56">
+      <img src="img/56_task.svg" alt="Задача 56" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 56</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 56 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="57" data-answer="D (100°)" data-expl="Угол между стрелками = |30·Ч − 5,5·М|: 7:20 → |210 − 110| = 100°.">
+    <a class="card-link" href="img/57_task.svg" aria-label="Открыть задачу 57">
+      <img src="img/57_task.svg" alt="Задача 57" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 57</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 57 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="58" data-answer="A (4 оборота по часовой)" data-expl="Скорость ремня одна по всей цепочке: 40/10 = 4 оборота; два перекрёста меняют направление дважды.">
+    <a class="card-link" href="img/58_task.svg" aria-label="Открыть задачу 58">
+      <img src="img/58_task.svg" alt="Задача 58" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 58</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 58 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="59" data-answer="B (3)" data-expl="● = 2, ■ = 3, ▲ = 5; рычаг: ★·2 = (5 + 5 + 2 + 2)·1 → ★ = 7; ★ + ● = 9 = 3 ■.">
+    <a class="card-link" href="img/59_task.svg" aria-label="Открыть задачу 59">
+      <img src="img/59_task.svg" alt="Задача 59" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 59</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 59 решена">Решено</button>
+    </div>
+  </article>
+  <article class="card" data-n="60" data-answer="B (фев, мар, ноя)" data-expl="13-е — пятница, когда 1-е — воскресенье: сдвиг от января +3 у февраля, марта и ноября.">
+    <a class="card-link" href="img/60_task.svg" aria-label="Открыть задачу 60">
+      <img src="img/60_task.svg" alt="Задача 60" width="800" height="600" loading="lazy">
+    </a>
+    <div class="card-foot">
+      <span class="card-title">Задача 60</span>
+      <button type="button" class="solved-btn" aria-pressed="false" aria-label="Задача 60 решена">Решено</button>
+    </div>
+  </article>
 </main>
+<p class="empty" id="empty" hidden>Здесь пока ничего нет.</p>
 <dialog class="viewer" id="viewer" aria-labelledby="v-title">
   <div class="viewer-inner">
     <div class="viewer-bar">
       <h2 id="v-title">Задача</h2>
-      <button type="button" class="btn btn-icon" id="v-close" aria-label="Закрыть">✕</button>
+      <div class="viewer-bar-right">
+        <button type="button" class="solved-btn" id="v-solved" aria-pressed="false">Решено</button>
+        <button type="button" class="btn btn-icon" id="v-close" aria-label="Закрыть">✕</button>
+      </div>
     </div>
     <div class="viewer-img"><img id="v-img" alt="" width="800" height="600"></div>
     <div class="viewer-controls">
@@ -208,6 +583,16 @@
     <p class="answer" id="v-answer" aria-live="polite" hidden></p>
   </div>
 </dialog>
-<footer class="foot">Стрелки ← → листают задачи, Esc закрывает окно.</footer>
+<div class="consent" id="consent" role="region" aria-label="Cookie" hidden>
+  <p>Сайт использует cookie, чтобы запомнить, какие задачи вы отметили решёнными. Других данных не собирается и никуда не отправляется.</p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-main" id="c-accept">Принять</button>
+    <button type="button" class="btn" id="c-decline">Отказаться</button>
+  </div>
+</div>
+<footer class="foot">
+  Стрелки ← → листают задачи, Esc закрывает окно.
+  <button type="button" class="link-btn" id="c-settings">Настройки cookie</button>
+</footer>
 </body>
 </html>

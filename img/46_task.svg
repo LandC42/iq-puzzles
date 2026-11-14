@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><marker id="arr-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#222222"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27AE60"/></marker><marker id="arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9AA0A6"/></marker><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E74C3C"/></marker><marker id="arr-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#39FF6A"/></marker><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3498DB"/></marker></defs>
+  <rect width="800" height="600" fill="#FFFFFF"/>
+  <text x="40" y="48" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="bold" fill="#222222" text-anchor="start">Задача 46</text>
+  <text x="40" y="80" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Каждая плитка — число, записанное рельефно-точечным шрифтом (знак числа</text>
+  <text x="40" y="104" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">опущен). Подсказка показывает 1–5. Какое число следует дальше?</text>
+  <rect x="25" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="43" cy="182" r="6" fill="#222222"/>
+  <circle cx="43" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="43" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="57" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="57" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="57" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="85" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="103" cy="182" r="6" fill="#222222"/>
+  <circle cx="103" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="103" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="117" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="117" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="117" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="145" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="163" cy="182" r="6" fill="#222222"/>
+  <circle cx="163" cy="197" r="6" fill="#222222"/>
+  <circle cx="163" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="177" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="177" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="177" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="205" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="223" cy="182" r="6" fill="#222222"/>
+  <circle cx="223" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="223" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="237" cy="182" r="6" fill="#222222"/>
+  <circle cx="237" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="237" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="265" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="283" cy="182" r="6" fill="#222222"/>
+  <circle cx="283" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="283" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="297" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="297" cy="197" r="6" fill="#222222"/>
+  <circle cx="297" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="325" y="162" width="50" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="343" cy="182" r="6" fill="#222222"/>
+  <circle cx="343" cy="197" r="6" fill="#222222"/>
+  <circle cx="343" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="357" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="357" cy="197" r="6" fill="#222222"/>
+  <circle cx="357" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="385" y="162" width="90" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="403" cy="182" r="6" fill="#222222"/>
+  <circle cx="403" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="403" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="417" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="417" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="417" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="443" cy="182" r="6" fill="#222222"/>
+  <circle cx="443" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="443" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="457" cy="182" r="6" fill="#222222"/>
+  <circle cx="457" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="457" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="485" y="162" width="90" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="503" cy="182" r="6" fill="#222222"/>
+  <circle cx="503" cy="197" r="6" fill="#222222"/>
+  <circle cx="503" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="517" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="517" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="517" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="543" cy="182" r="6" fill="#222222"/>
+  <circle cx="543" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="543" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="557" cy="182" r="3" fill="#D0D3D8"/>
+  <circle cx="557" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="557" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="585" y="162" width="90" height="70" rx="8" fill="#FFFFFF" stroke="#9B59B6" stroke-width="2"/>
+  <circle cx="603" cy="182" r="6" fill="#222222"/>
+  <circle cx="603" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="603" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="617" cy="182" r="6" fill="#222222"/>
+  <circle cx="617" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="617" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="643" cy="182" r="6" fill="#222222"/>
+  <circle cx="643" cy="197" r="3" fill="#D0D3D8"/>
+  <circle cx="643" cy="212" r="3" fill="#D0D3D8"/>
+  <circle cx="657" cy="182" r="6" fill="#222222"/>
+  <circle cx="657" cy="197" r="6" fill="#222222"/>
+  <circle cx="657" cy="212" r="3" fill="#D0D3D8"/>
+  <rect x="685" y="162" width="90" height="70" rx="8" fill="#D0D3D8"/>
+  <text x="730" y="211.4" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">?</text>
+  <text x="200" y="302" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="normal" fill="#444444" text-anchor="start">Подсказка:</text>
+  <rect x="298" y="270" width="38" height="54" rx="4" fill="none" stroke="#D0D3D8" stroke-width="1"/>
+  <circle cx="310" cy="282" r="6" fill="#222222"/>
+  <circle cx="310" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="310" cy="312" r="3" fill="#D0D3D8"/>
+  <circle cx="324" cy="282" r="3" fill="#D0D3D8"/>
+  <circle cx="324" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="324" cy="312" r="3" fill="#D0D3D8"/>
+  <text x="317" y="344" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444" text-anchor="middle">1</text>
+  <rect x="348" y="270" width="38" height="54" rx="4" fill="none" stroke="#D0D3D8" stroke-width="1"/>
+  <circle cx="360" cy="282" r="6" fill="#222222"/>
+  <circle cx="360" cy="297" r="6" fill="#222222"/>
+  <circle cx="360" cy="312" r="3" fill="#D0D3D8"/>
+  <circle cx="374" cy="282" r="3" fill="#D0D3D8"/>
+  <circle cx="374" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="374" cy="312" r="3" fill="#D0D3D8"/>
+  <text x="367" y="344" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444" text-anchor="middle">2</text>
+  <rect x="398" y="270" width="38" height="54" rx="4" fill="none" stroke="#D0D3D8" stroke-width="1"/>
+  <circle cx="410" cy="282" r="6" fill="#222222"/>
+  <circle cx="410" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="410" cy="312" r="3" fill="#D0D3D8"/>
+  <circle cx="424" cy="282" r="6" fill="#222222"/>
+  <circle cx="424" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="424" cy="312" r="3" fill="#D0D3D8"/>
+  <text x="417" y="344" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444" text-anchor="middle">3</text>
+  <rect x="448" y="270" width="38" height="54" rx="4" fill="none" stroke="#D0D3D8" stroke-width="1"/>
+  <circle cx="460" cy="282" r="6" fill="#222222"/>
+  <circle cx="460" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="460" cy="312" r="3" fill="#D0D3D8"/>
+  <circle cx="474" cy="282" r="6" fill="#222222"/>
+  <circle cx="474" cy="297" r="6" fill="#222222"/>
+  <circle cx="474" cy="312" r="3" fill="#D0D3D8"/>
+  <text x="467" y="344" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444" text-anchor="middle">4</text>
+  <rect x="498" y="270" width="38" height="54" rx="4" fill="none" stroke="#D0D3D8" stroke-width="1"/>
+  <circle cx="510" cy="282" r="6" fill="#222222"/>
+  <circle cx="510" cy="297" r="3" fill="#D0D3D8"/>
+  <circle cx="510" cy="312" r="3" fill="#D0D3D8"/>
+  <circle cx="524" cy="282" r="3" fill="#D0D3D8"/>
+  <circle cx="524" cy="297" r="6" fill="#222222"/>
+  <circle cx="524" cy="312" r="3" fill="#D0D3D8"/>
+  <text x="517" y="344" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="bold" fill="#444444" text-anchor="middle">5</text>
+  <rect x="40" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="68.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="68.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="68.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="82.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="82.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="82.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="108.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="108.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="108.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="122.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="122.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="122.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="95" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">A</text>
+  <rect x="162" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="190.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="190.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="190.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="204.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="204.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="204.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="230.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="230.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="230.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="244.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="244.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="244.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="217" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">B</text>
+  <rect x="284" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="312.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="312.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="312.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="326.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="326.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="326.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="352.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="352.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="352.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="366.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="366.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="366.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="339" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">C</text>
+  <rect x="406" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="434.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="434.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="434.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="448.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="448.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="448.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="474.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="474.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="474.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="488.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="488.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="488.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="461" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">D</text>
+  <rect x="528" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="556.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="556.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="556.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="570.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="570.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="570.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="596.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="596.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="596.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="610.0" cy="450" r="3" fill="#D0D3D8"/>
+  <circle cx="610.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="610.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="583" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">E</text>
+  <rect x="650" y="410" width="110" height="110" rx="8" fill="#FFFFFF" stroke="#D0D3D8" stroke-width="2"/>
+  <circle cx="678.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="678.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="678.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="692.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="692.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="692.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="718.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="718.0" cy="465" r="6" fill="#222222"/>
+  <circle cx="718.0" cy="480" r="3" fill="#D0D3D8"/>
+  <circle cx="732.0" cy="450" r="6" fill="#222222"/>
+  <circle cx="732.0" cy="465" r="3" fill="#D0D3D8"/>
+  <circle cx="732.0" cy="480" r="3" fill="#D0D3D8"/>
+  <text x="705" y="544" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222" text-anchor="middle">F</text>
+</svg>
